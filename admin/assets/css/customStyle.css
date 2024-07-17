@@ -71,3 +71,27 @@ body {
 .navbar-vertical.navbar-expand-xs .navbar-nav .nav-link {
     padding-left: 36px;
 }
+
+.btn-search {
+    border-radius: 50px;
+}
+
+.btn-primary,
+.btn-primary:hover {
+    background-color: var(--primary-color);
+}
+
+.btn-outline-primary,
+.btn-outline-primary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-primary:hover:not(.active) {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+}

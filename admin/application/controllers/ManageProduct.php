@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home extends MY_Controller
+class ManageProduct extends MY_Controller
 {
 
 	public function __construct()
@@ -13,12 +13,8 @@ class Home extends MY_Controller
 
 	public function index()
 	{
-		$data['titlePage'] = 'แดชบอร์ด';
-		parent::view('home', $data);
+		$data['titlePage'] = 'จัดการสินค้า';
+		parent::view('manageProduct/index', $data);
 	}
 
-	public function signOut()
-	{
-		die('sss');
-	}
 }
