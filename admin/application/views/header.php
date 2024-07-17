@@ -80,7 +80,7 @@ define('LINK', base_url() . 'admin/');
                         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">เกี่ยวกับบัญชีผู้ใช้</h6>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="<?= base_url() . 'admin/' . 'profile' ?>" title="โปรไฟล์">
+                        <a class="nav-link " href="<?= LINK ?>profile" title="โปรไฟล์">
                             <i class="fa-regular fa-user"></i>
                             <span class="nav-link-text ms-1">โปรไฟล์</span>
                         </a>
