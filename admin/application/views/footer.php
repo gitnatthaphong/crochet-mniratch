@@ -15,6 +15,19 @@
 </footer>
 </div>
 </main>
+</div>
+
+<script>
+    function perloader() {
+        var preloader = document.querySelector('.preloader');
+        var content = document.querySelector('.customMainContent');
+
+        setTimeout(() => {
+            preloader.style.display = 'none';
+            content.style.display = 'block';
+        }, 1500);
+    }
+</script>
 
 </body>
 

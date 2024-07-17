@@ -16,4 +16,9 @@ class Home extends MY_Controller
 		$data['titlePage'] = 'Dashboard';
 		parent::view('home', $data);
 	}
+
+	public function signOut()
+	{
+		die('sss');
+	}
 }

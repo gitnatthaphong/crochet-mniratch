@@ -17,7 +17,7 @@ class MY_Controller extends CI_Controller
     {
         $param['cur_class'] = $this->cur_class;
         $param['cur_method'] = $this->cur_method;
-        $param['action_link'] = base_url() . $this->cur_class . '/';
+        $param['action_link'] = base_url() . 'admin/' . $this->cur_class . '/';
 
         $this->load->view('header', $param);
 
