@@ -3,12 +3,15 @@
     <div class="container">
         <div class="hm-footer-copyright">
             <div class="row">
-                <div class="col-sm-5">
+                <div class="col-sm-6">
                     <p>
-                        2024 &copy;copyright. designed and developed by <a href="https://github.com/gitnatthaphong" target="_blank" class="text-primary">Natthaphong</a>
-                    </p><!--/p-->
+                        &copy;<script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        Crochet by Mniratch | ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์
+                    </p>
                 </div>
-                <div class="col-sm-7">
+                <div class="col-sm-6">
                     <div class="footer-social">
                         <!-- <span><i class="fa fa-phone"> +1  (222) 777 8888</i></span> -->
                         <a href="https://www.facebook.com/niratshoppingg/" target="_blank"><i class="fa fa-facebook"></i></a>

@@ -7,17 +7,13 @@ class Home extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Home_model', 'model');
-		$this->model->updateCountSite();
+		// $this->load->model('Home_model', 'model');
+		// $this->model->updateCountSite();
 	}
 
 	public function index()
 	{
-		$data['counter'] = [
-			'countSite' => $this->model->getCountSite(),
-			'countSell' => 2200,
-		];
-
+		$data['titlePage'] = 'Dashboard';
 		parent::view('home', $data);
 	}
 }

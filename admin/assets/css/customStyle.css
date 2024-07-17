@@ -1,6 +1,6 @@
-@font-face {
-    font-family: 'IBMPlexSansThai';
-    src: url(../fonts/IBMPlexSansThai/IBMPlexSansThai-Medium.ttf);
+:root {
+    --primary-color: #FFB1B1;
+    --secondary-color: #FFCBCB;
 }
 
 ::selection {
@@ -8,175 +8,22 @@
     background: var(--primary-color);
 }
 
-body {
-    font-family: 'IBMPlexSansThai', sans-serif;
+.bg-primary {
+    background-color: var(--secondary-color) !important;
 }
 
-.text-primary {
-    color: var(--primary-color) !important;
-}
-
-.content {
-    display: none;
-}
-
-.welcome-hero {
-    height: 570px;
-}
-
-.list-topics .container .list-topics-content ul {
-    text-align: center;
-}
-
-.list-topics .container .list-topics-content .single-list-topics-icon.customIcon {
-    font-size: 50px;
-}
-
-.works-content .single-how-works {
-    min-height: 420px;
-}
-
-.works-content .single-how-works .single-how-works-icon.customIcon {
-    font-size: 40px;
-}
-
-.works-content .single-how-works p .text-link {
-    margin: 0;
-    color: #767f86;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.8;
-    text-transform: initial;
-}
-
-.works-content .single-how-works:hover p .text-link {
-    color: #fff;
-}
-
-img {
-    -webkit-user-drag: none;  /* Disable dragging in Safari and Chrome */
-    -khtml-user-drag: none;    /* Disable dragging in older versions of Safari */
-    -moz-user-drag: none;      /* Disable dragging in Firefox */
-    -o-user-drag: none;        /* Disable dragging in Opera */
-}
-
-.preloader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.preloader .loader {
-    width: 20px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: var(--primary-color); 
-    box-shadow: 0 0 0 0 #0004;
-    animation: l1 1s infinite;
-}
-
-@keyframes l1 {
-    100% {box-shadow: 0 0 0 30px #0000}
-}
-
-.header-top .header-top-left .select-opt a > img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-}
-
-.explore .explore-content .single-explore-item .single-explore-img {
-    height: 300px;
-}
-
-.explore .explore-content .single-explore-item .single-explore-img img {
+.navbar-vertical.navbar-expand-xs .navbar-collapse {
     height: 100%;
-    width: 100%;
-    object-fit: cover;
 }
 
-.explore .explore-content .single-explore-item {
-    cursor: pointer;
+:not(.main-content) .navbar .dropdown .dropdown-menu {
+    top: 0.25rem !important;   
 }
 
-.single-explore-img-info .flex {
-    display: flex;
-    gap: 5px;
-    padding: 0 0 15px 15px;
+.dropdown .dropdown-menu.dropdown-menu-end {
+    right: 8px !important;
 }
 
-.single-explore-img-info .flex button {
-    position: unset;
-    /* bottom: 15px;
-    left: 15px; */
-    width: auto;
-    height: 21px;
-    line-height: 21px;
-    background: var(--primary-color);
-    border-radius: 3px;
-    color: #fcfcfc;
-    text-transform: capitalize;
-    text-align: center;
-    font-size: 12px;
-    padding: 0 5px;
-}
-
-#scroll-Top .return-to-top i {
-    animation: none;
-}
-
-.top-area .customNav a.navbar-brand,
-.top-area .customNav a.navbar-brand:hover {
-    display: inline-block;
-    color: #1b1e20;
-    font-size: 20px;
-    font-weight: 700;
-    padding: 20px 0px;
-}
-
-.top-area .customNav a.navbar-brand span {
-    display: inline-block;
-    color: var(--primary-color);
-    text-transform: capitalize;
-}
-
-.top-area .customNav .navbar-expand-lg .navbar-nav .nav-link {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-a, a:hover, a:active, a:focus {
-    display: inline-block;
-    text-decoration: none;
-    color: #343a3f;
-    font-weight: 500;
-    font-size: 14px;
-    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-}
-
-.top-area .customNav .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
-    color: #343a3f;
-    display: inline-block;
-    text-decoration: none;
-    color: #343a3f;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.top-area .customNav .navbar-expand-lg .navbar-nav .nav-link:hover,
-.top-area .customNav .navbar-nav .nav-link.active, .navbar-nav .show>.nav-link:hover {
-    color: var(--primary-color);
-}
-
-
-.works .works-content .single-how-works a:hover {
-    color: #fff;
-}
-
-.statistics .container {
-    z-index: 1;
+.navbar-expand-lg .navbar-nav .nav-link i {
+    font-size: 18px;
 }
