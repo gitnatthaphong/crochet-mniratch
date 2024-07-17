@@ -63,13 +63,13 @@ define('LINK', base_url() . 'admin/');
                 <ul class="navbar-nav">
                     <!-- BLOCK Menu -->
                     <li class="nav-item">
-                        <a class="nav-link active" href="./pages/dashboard.html">
+                        <a class="nav-link active" href="./pages/dashboard.html" title="แดชบอร์ด">
                             <i class="fa-solid fa-tv"></i>
                             <span class="nav-link-text ms-1">แดชบอร์ด</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="./pages/tables.html">
+                        <a class="nav-link " href="./pages/tables.html" title="จัดการหน้าเว็บไซต์">
                             <i class="fa-solid fa-earth-americas"></i>
                             <span class="nav-link-text ms-1">จัดการหน้าเว็บไซต์</span>
                         </a>
@@ -80,13 +80,13 @@ define('LINK', base_url() . 'admin/');
                         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">เกี่ยวกับบัญชีผู้ใช้</h6>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="<?= base_url() . 'admin/' . 'profile' ?>">
+                        <a class="nav-link " href="<?= base_url() . 'admin/' . 'profile' ?>" title="โปรไฟล์">
                             <i class="fa-regular fa-user"></i>
                             <span class="nav-link-text ms-1">โปรไฟล์</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="<?= $action_link ?>signOut">
+                        <a class="nav-link " href="<?= $action_link ?>signOut" title="ออกจากระบบ">
                             <i class="fa-solid fa-power-off"></i>
                             <span class="nav-link-text ms-1">ออกจากระบบ</span>
                         </a>
