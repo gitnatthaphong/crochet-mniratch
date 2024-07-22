@@ -35,7 +35,7 @@ define('LINK', base_url() . 'admin/');
     <script src="<?= ASSETS_PATH ?>js/plugins/chartjs.min.js"></script>
 
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="<?= ASSETS_PATH ?>js/argon-dashboard.min.js?v=2.0.4"></script>
+    <script src="<?= ASSETS_PATH ?>js/argon-dashboard.js?v=2.0.4"></script>
 
     <link rel="stylesheet" href="<?= ASSETS_PATH ?>css/customStyle.css">
 </head>
