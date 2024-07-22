@@ -35,7 +35,7 @@
                     <table class="table align-items-center ">
                         <thead>
                             <tr>
-                                <td class="text-center">ลำดับ</td>
+                                <td width="20" class="text-center">ลำดับ</td>
                                 <td>รายการ</td>
                                 <td class="text-center">สถานะ</td>
                                 <td class="text-center">#</td>
@@ -43,7 +43,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="w-30">
+                                <td class="text-center">
                                     1
                                 </td>
                                 <td>
