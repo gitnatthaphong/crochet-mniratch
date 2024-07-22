@@ -398,11 +398,11 @@
     $(document).ready(function() {
         // counter
         let phpCountSite = <?= json_encode($counter['countSite']) ?>;
-        let countSite = numeral(phpCountSite).format('0.0a');
+        let countSite = numeral(phpCountSite).format('0 a');
         $('.countSite').text(countSite);
 
         let phpCountSell = <?= json_encode($counter['countSell']) ?>;
-        let countSell = numeral(phpCountSell).format('0.0a');
+        let countSell = numeral(phpCountSell).format('0 a');
         $('.countSell').text(countSell);
         // counter
 
