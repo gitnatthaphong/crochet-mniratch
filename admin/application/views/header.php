@@ -109,6 +109,12 @@ define('LINK', base_url() . 'admin/');
                             <span class="nav-link-text ms-1">จัดการสินค้า</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= strtolower($this->cur_class) == 'managecategory' ? 'active' : '' ?>" href="<?= LINK ?>ManageCategory" title="จัดการสินค้า">
+                        <i class="fa-solid fa-layer-group"></i>
+                            <span class="nav-link-text ms-1">จัดการหมวดหมู่</span>
+                        </a>
+                    </li>
 
                     <!-- 1. เพิ่ม จัดการหน้าเว็บไซต์  icon <i class="fa-solid fa-earth-americas"></i> -->
 
