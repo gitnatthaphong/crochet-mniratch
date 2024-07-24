@@ -110,7 +110,7 @@ define('LINK', base_url() . 'admin/');
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= strtolower($this->cur_class) == 'managecategory' ? 'active' : '' ?>" href="<?= LINK ?>ManageCategory" title="จัดการสินค้า">
+                        <a class="nav-link <?= strtolower($this->cur_class) == 'managecategory' ? 'active' : '' ?>" href="<?= LINK ?>ManageCategory" title="จัดการหมวดหมู่">
                         <i class="fa-solid fa-layer-group"></i>
                             <span class="nav-link-text ms-1">จัดการหมวดหมู่</span>
                         </a>
