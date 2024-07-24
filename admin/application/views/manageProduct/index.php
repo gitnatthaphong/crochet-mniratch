@@ -32,7 +32,7 @@
 
             <div class="container mt-3">
                 <div class="text-end">
-                    <a href="<?= $action_link ?>form" class="btn btn-success">
+                    <a href="<?= $action_link ?>form" class="btn btn-success" title="เพิ่มข้อมูล">
                         <i class="fa-solid fa-plus"></i> เพิ่มข้อมูล
                     </a>
                 </div>
@@ -41,26 +41,46 @@
                         <thead>
                             <tr>
                                 <td width="20" class="text-center">ลำดับ</td>
-                                <td>รายการ</td>
+                                <td>ชื่อสินค้า</td>
                                 <td class="text-center">สถานะ</td>
+                                <td class="text-center">วันที่สร้าง</td>
                                 <td class="text-center"><i class="fa-solid fa-gears"></i></td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="text-center">
-                                    1
-                                </td>
-                                <td>
-                                    <p class="text-xs font-weight-bold mb-0">Sales</p>
-                                </td>
-                                <td class="text-center">
-                                    <p class="text-xs font-weight-bold mb-0">Value:</p>
-                                </td>
-                                <td class="text-center">
-                                    tes
-                                </td>
-                            </tr>
+                            <?php if(!empty($results)) : ?>
+                                <?php foreach($results as $key => $value) : ?>
+                                    <tr>
+                                        <td class="text-center">
+                                            <?= ($key + 1) ?>
+                                        </td>
+                                        <td>
+                                            <?= $value['product_name'] ?>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="<?= $value['status'] == 1 ? 'text-success' : 'text-danger' ?>">
+                                                <?= $value['status'] == 1 ? 'เผยแพร่' : 'ไม่เผยแพร่' ?>
+                                            </span>
+                                        </td>
+                                        <td class="text-center">
+                                            <?= $value['create_date'] ?>
+                                        </td>
+                                        <td class="text-center">
+                                            <a class="btn" href="<?= $action_link ?>form/<?= $value['product_id'] ?>">
+                                                <i class="fa-regular fa-pen-to-square"></i>
+                                            </a>
+
+                                            <a onclick="confirm('คุณต้องการลบรายการนี้ใช่หรือไม่ ?')" class="btn btn-danger" href="<?= $action_link ?>delete/<?= $value['product_id'] ?>">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="4" class="text-center">- ไม่พบข้อมูล -</td>
+                                </tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>

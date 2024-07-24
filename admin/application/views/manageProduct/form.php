@@ -29,7 +29,7 @@
 <div class="row mt-4">
     <div class="col-lg-12 mb-lg-0 mb-4">
         <div class="card customCard">
-            <form action="<?= $action_link ?>submit" method="post" enctype="multipart/form-data">
+            <form action="<?= $action_link ?>save/<?= $id ?>" method="post" enctype="multipart/form-data">
                 <div class="row gy-2">
                     <div class="col-12">
                         <label for="product_name" class="form-label">ชื่อสินค้า</label>
@@ -37,16 +37,34 @@
                     </div>
 
                     <div class="col-12">
-                        <label for="product_image" class="form-label">แท็ก</label>
-                        <input type="text" class="form-control form-tags" id="example" data-ub-tag-enter placeholder="พิมพ์แล้วกด Enter">
+                        <label for="product_tags" class="form-label">แท็ก</label>
+                        <input type="text" name="product_tags" class="form-control form-tags" id="example" data-ub-tag-enter placeholder="พิมพ์แล้วกด Enter">
                     </div>
 
                     <div class="col-12">
                         <label for="product_image" class="form-label">รูปภาพสินค้า</label>
-                        <input type="file" class="form-control" id="product_image" placeholder="รูปภาพสินค้า" accept="image/*">
+                        <input type="file" class="form-control" id="product_image" name="product_image" placeholder="รูปภาพสินค้า" accept="image/*">
                         <div class="text-center">
                             <div class="previewImage">
                                 <img class="previewBash" id="previewBash">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="d-flex gap-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="1" name="status" id="status_1">
+                                <label class="form-check-label" for="status_1">
+                                    เผยแพร่
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="0" name="status" id="status_0" checked>
+                                <label class="form-check-label" for="status_0">
+                                    ไม่เผยแพร่
+                                </label>
                             </div>
                         </div>
                     </div>

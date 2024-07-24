@@ -5,9 +5,9 @@ if ( ! function_exists('_print_r'))
 {
 	function _print_r($data)
 	{
-        echo "<per>";
-		_print_r($data);
-        echo "</per>";
+        echo "<pre>";
+		print_r($data);
+        echo "</pre>";
         die();
 	}
 }
