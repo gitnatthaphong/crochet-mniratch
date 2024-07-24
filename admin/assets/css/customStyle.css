@@ -112,9 +112,45 @@ body {
 .btn:hover,
 .btn:active {
     outline: none;
+	box-shadow: none;
 }
 
 .btn {
-    padding: 0 10px;
-    height: 40px;
+    padding: 6px 10px;
+}
+
+.customCard {
+	min-height: 70vh;
+	padding: 20px 30px;
+}
+
+.use-bootstrap-tag .input-wrapper input {
+	color: #495057;
+	margin-top: -12px;
+}
+
+.use-bootstrap-tag {
+	min-height: 70px;
+}
+
+.use-bootstrap-tag.focus {
+	border-color: var(--primary-color);
+}
+
+.use-bootstrap-tag.focus,
+*:focus {
+    outline: none;
+	box-shadow: none
+}
+
+
+input:hover,
+input:active,
+input:focus {
+	outline: none !important;
+	border-color: var(--primary-color);
+}
+
+input::placeholder {
+	color: #d2d6da !important;
 }

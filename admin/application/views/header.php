@@ -8,10 +8,36 @@ define('LINK', base_url() . 'admin/');
 
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" sizes="76x76" href="<?= ASSETS_PATH ?>logo/favicon.ico">
     <link rel="icon" href="<?= ASSETS_PATH ?>logo/favicon.ico">
     <title>Crochet by Mniratch | ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์</title>
+
+    <meta name="csrf-token" content="OQkmAxwieyYlPAgbBAINdj5kPQ4dDjUCPaJz-uVOGHGUvLADPPm6_Qjm">
+
+    <meta name="description" content="ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์ หรือที่นิยมเรียกกันว่า ไหมด้าย ขนาด 20 เป็นไหมที่มีคุณภาพ เหมาะแก่การถักงานให้แน่น เรียบ แต่มีความหรูอยู่ในตัวชิ้นงาน มีการออกแบบการถักงานออกมาให้หลากหลาย ไม่ว่าจะตุ๊กตา ตัวเล็ก ตัวใหญ่ กระเป๋า ฯลฯ สอบถามเพิ่มเติมได้ที่หน้าเพจ FB งานทุกชิ้นเป็นงานฝีมือ ทำตามออเดอร์เป็นส่วนใหญ่ ดังนั้นสินค้าจะใช้ระยะเวลาในการทำ">
+    <meta name="keywords" content="Crochet, Mniratch, ไหมพรม, ไหมโครเชต์, โครเชต์,งานถักจากไหมคอตตอนซอฟท์">
+    <meta name="author" content="Crochet by Mniratch">
+
+    <meta id="meta-application-name" name="application-name" content="Crochet by Mniratch ไหมพรม โครเชต์" />
+    <meta id="meta-description" name="description" content="ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์ หรือที่นิยมเรียกกันว่า ไหมด้าย ขนาด 20 เป็นไหมที่มีคุณภาพ เหมาะแก่การถักงานให้แน่น เรียบ แต่มีความหรูอยู่ในตัวชิ้นงาน มีการออกแบบการถักงานออกมาให้หลากหลาย ไม่ว่าจะตุ๊กตา ตัวเล็ก ตัวใหญ่ กระเป๋า ฯลฯ สอบถามเพิ่มเติมได้ที่หน้าเพจ FB งานทุกชิ้นเป็นงานฝีมือ ทำตามออเดอร์เป็นส่วนใหญ่ ดังนั้นสินค้าจะใช้ระยะเวลาในการทำ" />
+    <meta id="meta-keywords" name="keywords" content="Crochet Mniratch, Crochet by Mniratch, Crochet, Mniratch, ไหมพรม, ไหมด้าย,ไหมโครเชต์, โครเชต์, งานถักจากไหมคอตตอนซอฟท์" />
+
+
+    <!-- Schema.org markup for Google+ -->
+    <meta id="meta-item-name" itemprop="name" content="Crochet by Mniratch | ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์" />
+    <meta id="meta-item-description" itemprop="description" content="ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์ หรือที่นิยมเรียกกันว่า ไหมด้าย ขนาด 20 เป็นไหมที่มีคุณภาพ เหมาะแก่การถักงานให้แน่น เรียบ แต่มีความหรูอยู่ในตัวชิ้นงาน มีการออกแบบการถักงานออกมาให้หลากหลาย ไม่ว่าจะตุ๊กตา ตัวเล็ก ตัวใหญ่ กระเป๋า ฯลฯ สอบถามเพิ่มเติมได้ที่หน้าเพจ FB งานทุกชิ้นเป็นงานฝีมือ ทำตามออเดอร์เป็นส่วนใหญ่ ดังนั้นสินค้าจะใช้ระยะเวลาในการทำ" />
+    <meta id="meta-item-image" itemprop="image" content="<?= ASSETS_PATH ?>logo/favicon.ico" />
+    <link rel="canonical" href="<?= APP_BASE_URL ?>" />
+
+    <meta property="og:url" content="<?= APP_BASE_URL ?>" />
+    <meta property="og:title" content="Crochet by Mniratch | ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์" />
+    <meta property="og:description" content="ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์ หรือที่นิยมเรียกกันว่า ไหมด้าย ขนาด 20 เป็นไหมที่มีคุณภาพ เหมาะแก่การถักงานให้แน่น เรียบ แต่มีความหรูอยู่ในตัวชิ้นงาน มีการออกแบบการถักงานออกมาให้หลากหลาย ไม่ว่าจะตุ๊กตา ตัวเล็ก ตัวใหญ่ กระเป๋า ฯลฯ สอบถามเพิ่มเติมได้ที่หน้าเพจ FB งานทุกชิ้นเป็นงานฝีมือ ทำตามออเดอร์เป็นส่วนใหญ่ ดังนั้นสินค้าจะใช้ระยะเวลาในการทำ" />
+    <meta property="og:image" content="<?= ASSETS_PATH ?>images/welcome-hero/banner.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
 
 
     <!-- Nucleo Icons -->
@@ -24,6 +50,11 @@ define('LINK', base_url() . 'admin/');
     <link href="<?= ASSETS_PATH ?>fonts/fontawesome/js/all.min.js" rel="stylesheet" />
     <link href="<?= ASSETS_PATH ?>fonts/fontawesome/css/all.min.css" rel="stylesheet" />
 
+    <!-- Bootstrap tag -->
+    <link href="<?= ASSETS_PATH ?>js/plugins/bootstrap-tag/dist/use-bootstrap-tag.min.css" rel="stylesheet" />
+    <script src="<?= ASSETS_PATH ?>js/plugins/bootstrap-tag/dist/use-bootstrap-tag.min.js"></script>
+    <!-- Bootstrap tag -->
+
     <!-- CSS Files -->
     <link id="pagestyle" href="<?= ASSETS_PATH ?>css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 
@@ -33,6 +64,11 @@ define('LINK', base_url() . 'admin/');
     <script src="<?= ASSETS_PATH ?>js/plugins/perfect-scrollbar.min.js"></script>
     <script src="<?= ASSETS_PATH ?>js/plugins/smooth-scrollbar.min.js"></script>
     <script src="<?= ASSETS_PATH ?>js/plugins/chartjs.min.js"></script>
+
+    <!-- jQuery -->
+       <script src="<?= ASSETS_PATH ?>js/plugins/jquery.min.js"></script>
+    <!-- jQuery -->
+
 
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="<?= ASSETS_PATH ?>js/argon-dashboard.js?v=2.0.4"></script>

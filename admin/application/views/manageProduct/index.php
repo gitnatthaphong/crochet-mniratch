@@ -10,7 +10,7 @@
 
 <div class="row mt-4">
     <div class="col-lg-12 mb-lg-0 mb-4">
-        <div class="card ">
+        <div class="card customCard">
             <div class="card-header pb-0 p-3">
                 <div class="row gap-2 mt-3 justify-content-center">
                     <div class="col-12 col-sm-8">
@@ -23,7 +23,7 @@
                         <i class="fa-solid fa-magnifying-glass"></i> ค้นหา
                     </button>
 
-                    <button type="button" class="btn btn-outline-primary" title="ล้างค่า">
+                    <button type="button" class="btn btn-outline-secondary" title="ล้างค่า">
                         <i class="fa-solid fa-rotate"></i> ล้างค่า
                     </button>
                 </div>
@@ -31,6 +31,11 @@
             </div>
 
             <div class="container mt-3">
+                <div class="text-end">
+                    <a href="<?= $action_link ?>form" class="btn btn-success">
+                        <i class="fa-solid fa-plus"></i> เพิ่มข้อมูล
+                    </a>
+                </div>
                 <div class="table-responsive">
                     <table class="table align-items-center ">
                         <thead>
@@ -38,7 +43,7 @@
                                 <td width="20" class="text-center">ลำดับ</td>
                                 <td>รายการ</td>
                                 <td class="text-center">สถานะ</td>
-                                <td class="text-center">#</td>
+                                <td class="text-center"><i class="fa-solid fa-gears"></i></td>
                             </tr>
                         </thead>
                         <tbody>

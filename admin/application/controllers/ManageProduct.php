@@ -17,4 +17,11 @@ class ManageProduct extends MY_Controller
 		parent::view('manageProduct/index', $data);
 	}
 
+	public function form($id = FALSE)
+	{
+		$data['titlePage'] = 'จัดการสินค้า';
+		$data['titlePageAction'] = !empty($id) ? 'แก้ไขข้อมูล' : 'เพิ่มข้อมูล';
+		parent::view('manageProduct/form', $data);
+	}
+
 }
