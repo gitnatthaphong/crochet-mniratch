@@ -154,3 +154,7 @@ input:focus {
 input::placeholder {
 	color: #d2d6da !important;
 }
+
+.customTable td{
+	font-size: 14px;
+}

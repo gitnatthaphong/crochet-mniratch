@@ -36,7 +36,7 @@
                         <i class="fa-solid fa-plus"></i> เพิ่มข้อมูล
                     </a>
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive customTable">
                     <table class="table align-items-center ">
                         <thead>
                             <tr>
