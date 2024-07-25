@@ -19,6 +19,6 @@ class Home extends MY_Controller
 
 	public function signOut()
 	{
-		die('sss');
+		redirect(base_url());
 	}
 }

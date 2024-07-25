@@ -107,6 +107,12 @@ define('LINK', base_url() . 'admin/');
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link <?= strtolower($this->cur_class) == 'managewebsite' ? 'active' : '' ?>" href="<?= LINK ?>ManageWebSite" title="จัดการหน้าเว็บไซต์">
+                            <i class="fa-solid fa-earth-americas"></i>
+                            <span class="nav-link-text ms-1">จัดการหน้าเว็บไซต์</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link <?= strtolower($this->cur_class) == 'manageproduct' ? 'active' : '' ?>" href="<?= LINK ?>ManageProduct" title="จัดการสินค้า">
                             <i class="fa-solid fa-cart-shopping"></i>
                             <span class="nav-link-text ms-1">จัดการสินค้า</span>
@@ -126,14 +132,14 @@ define('LINK', base_url() . 'admin/');
                     <li class="nav-item mt-3">
                         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">เกี่ยวกับบัญชีผู้ใช้</h6>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link <?= strtolower($this->cur_class) == 'profile' ? 'active' : '' ?>" href="<?= LINK ?>profile" title="โปรไฟล์">
                             <i class="fa-regular fa-user"></i>
                             <span class="nav-link-text ms-1">โปรไฟล์</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link " href="<?= $action_link ?>signOut" title="ออกจากระบบ">
+                        <a class="nav-link " href="<?= LINK ?>Home/signOut" title="ออกจากระบบ">
                             <i class="fa-solid fa-power-off"></i>
                             <span class="nav-link-text ms-1">ออกจากระบบ</span>
                         </a>
