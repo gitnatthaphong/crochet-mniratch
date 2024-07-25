@@ -159,6 +159,10 @@ input::placeholder {
 	font-size: 14px;
 }
 
+.customTable thead td{
+	font-weight: bold;
+}
+
 .was-validated .form-control:invalid+.use-bootstrap-tag, .form-control.is-invalid+.use-bootstrap-tag {
 	border: #EE4E4E 1px solid;
 }
@@ -198,4 +202,8 @@ input::placeholder {
 
 .pagination.customPagination .page-link:focus {
 	box-shadow: none;
+}
+
+.h-60 {
+	height: 60px !important;
 }

@@ -7,6 +7,11 @@ class ManageProduct_model extends CI_Model
     private $path = 'file_upload/product/';
     public $per_page = 10;
 
+    public $searchElement = [
+        'product_name' => 'like', 
+        'status' => 'where'
+    ];
+
     public function updateData($id)
     {
         $post = $this->input->post();
@@ -62,26 +67,45 @@ class ManageProduct_model extends CI_Model
 
     public function getData($page = 1)
     {
+        $this->fnc_searchQuery();
         $offset = $this->fnc_calPageOffset($page);
 
         $this->db->offset($offset);
         $this->db->limit($this->per_page);
         $this->db->order_by('create_date', 'desc');
         $data = $this->db->get($this->product_tbl)->result_array();
-
+        
         $getData = [];
         if(!empty($data)) {
             $getData = $data;
         }
-
+        
         return $getData;
     }
 
     public function getDataCount()
     {
+        $this->fnc_searchQuery();
         $count = 0;
         $count = $this->db->count_all_results($this->product_tbl);
         return $count;
+    }
+
+    private function fnc_searchQuery()
+    {
+        $post = $this->input->post();
+        
+        if(!empty($post)) {
+            if(empty($post['reset'])) {
+                $product_name = str_replace(' ', '', strtolower(trim($post['product_name'])));
+                $this->db->like("LOWER(REPLACE(product_name, ' ', ''))", $product_name);
+    
+                $status = $post['status'];
+                if($status != 'all') {
+                    $this->db->where('status', $status);
+                }
+            }
+        }
     }
 
     private function fnc_calPageOffset($page)

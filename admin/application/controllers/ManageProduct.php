@@ -15,10 +15,11 @@ class ManageProduct extends MY_Controller
 		$data['titlePage'] = 'จัดการสินค้า';
 		$data['results'] = $this->model->getData($page);
 		$data['count'] = $this->model->getDataCount();
-
-		// Pagination
-		getPagination($data, $data['count'], $page, $this->model->per_page);
-
+		$data['search'] = (empty($this->input->post()) || !empty($this->input->post('reset'))) ? [] : $this->input->post();
+		
+		// เรียกใช้ pagination ใน view คำสั่งบรรทัดด้านล่าง
+		// !empty($allPage) && $this->load->view('component/pagination');
+		parent::getPagination($data, $data['count'], $page, $this->model->per_page);
 		parent::view('manageProduct/index', $data);
 	}
 

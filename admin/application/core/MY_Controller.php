@@ -13,6 +13,13 @@ class MY_Controller extends CI_Controller
         $this->cur_method = $this->router->method;
     }
 
+    protected function getPagination(&$data, $countData, $page = 1, $per_page = 10)
+	{
+        $data['startNo'] = ($page - 1) * $per_page + 1;
+		$data['allPage'] = ceil($countData / $per_page);
+		$data['currentPage'] = $page;
+    }
+
     protected function view($views = null, $param = null)
     {
         $param['cur_class'] = $this->cur_class;

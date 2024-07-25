@@ -12,22 +12,32 @@
     <div class="col-lg-12 mb-lg-0 mb-4">
         <div class="card customCard">
             <div class="card-header pb-0 p-3">
-                <div class="row gap-2 mt-3 justify-content-center">
-                    <div class="col-12 col-sm-8">
-                        <input type="text" name="stext" class="form-control" id="stext" placeholder="ค้นหา">
+                <form action="<?= $action_link ?>" method="post">
+                    <div class="row gap-2 mt-3 justify-content-center">
+                        <div class="col-12 col-sm-6">
+                            <label for="product_name">ค้นหา</label>
+                            <input type="text" name="product_name" class="form-control" id="product_name" placeholder="ค้นหา" value="<?= !empty($search) && !empty($search['product_name']) ? $search['product_name'] : '' ?>">
+                        </div>
+                        <div class="col-12 col-sm-2">
+                            <label for="status">สถานะ</label>
+                            <select class="form-select" aria-label="Select Status" name="status">
+                                <option value="all" <?= !empty($search) && !empty($search['status']) && $search['status'] == 'all' ? 'selected' : '' ?>>ทั้งหมด</option>
+                                <option value="1" <?= !empty($search) && !empty($search['status']) && intval($search['status']) == 1 ? 'selected' : '' ?>>เผยแพร่</option>
+                                <option value="0" <?= !empty($search) && empty($search['status']) && intval($search['status']) == 0 ? 'selected' : '' ?>>ไม่เผยแพร่</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
 
-                <div class="d-flex gap-2 mt-2 justify-content-center">
-                    <button type="button" class="btn btn-primary" title="ค้นหา">
-                        <i class="fa-solid fa-magnifying-glass"></i> ค้นหา
-                    </button>
+                    <div class="d-flex gap-2 mt-2 justify-content-center">
+                        <button type="submit" class="btn btn-primary" title="ค้นหา">
+                            <i class="fa-solid fa-magnifying-glass"></i> ค้นหา
+                        </button>
 
-                    <button type="button" class="btn btn-outline-secondary" title="ล้างค่า">
-                        <i class="fa-solid fa-rotate"></i> ล้างค่า
-                    </button>
-                </div>
-
+                        <button type="submit" name="reset" value="clear" class="btn btn-outline-secondary" title="ล้างค่า">
+                            <i class="fa-solid fa-rotate"></i> ล้างค่า
+                        </button>
+                    </div>
+                </form>
             </div>
 
             <div class="container mt-3">
@@ -76,7 +86,7 @@
                                 <?php endforeach; ?>
                             <?php else: ?>
                                 <tr>
-                                    <td colspan="5" class="text-center">- ไม่พบข้อมูล -</td>
+                                    <td colspan="5" class="text-center h-60">- ไม่พบข้อมูล -</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
