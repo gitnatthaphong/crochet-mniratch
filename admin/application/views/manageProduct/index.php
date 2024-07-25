@@ -37,7 +37,7 @@
                     </a>
                 </div>
                 <div class="table-responsive customTable">
-                    <table class="table align-items-center ">
+                    <table class="table align-items-center table-striped">
                         <thead>
                             <tr>
                                 <td width="20" class="text-center">ลำดับ</td>
@@ -70,7 +70,7 @@
                                                 <i class="fa-regular fa-pen-to-square"></i>
                                             </a>
 
-                                            <a onclick="confirm('คุณต้องการลบรายการนี้ใช่หรือไม่ ?')" class="btn btn-danger" href="<?= $action_link ?>delete/<?= $value['product_id'] ?>">
+                                            <a onclick="return confirm('คุณต้องการลบรายการนี้ใช่หรือไม่ ?')" class="btn btn-danger" href="<?= $action_link ?>delete/<?= $value['product_id'] ?>">
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </a>
                                         </td>
@@ -78,7 +78,7 @@
                                 <?php endforeach; ?>
                             <?php else: ?>
                                 <tr>
-                                    <td colspan="4" class="text-center">- ไม่พบข้อมูล -</td>
+                                    <td colspan="5" class="text-center">- ไม่พบข้อมูล -</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>

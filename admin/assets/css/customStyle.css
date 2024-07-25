@@ -158,3 +158,30 @@ input::placeholder {
 .customTable td{
 	font-size: 14px;
 }
+
+.was-validated .form-control:invalid+.use-bootstrap-tag, .form-control.is-invalid+.use-bootstrap-tag {
+	border: #EE4E4E 1px solid;
+}
+
+.was-validated .form-control:valid+.use-bootstrap-tag, .form-control.is-invalid+.use-bootstrap-tag {
+	border: #7ABA78 1px solid;
+}
+
+.was-validated .form-check-input:valid~.form-check-label, .form-check-input.is-valid~.form-check-label {
+	color: unset;
+}
+
+.was-validated .form-control:valid+.use-bootstrap-tag.focus, .form-control.is-valid+.use-bootstrap-tag.focus,
+.was-validated .form-control:invalid+.use-bootstrap-tag.focus, .form-control.is-invalid+.use-bootstrap-tag.focus {
+	box-shadow: none;
+	border: var(--primary-color) 1px solid;
+}
+
+.text-validate-ci p {
+	font-size: 12px;
+	margin-bottom: 0;
+}
+
+.alert-danger {
+	background-image: none;
+}
