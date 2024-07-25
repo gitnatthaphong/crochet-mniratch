@@ -5,7 +5,7 @@ class ManageProduct_model extends CI_Model
 {
     private $product_tbl = 'product';
     private $path = 'file_upload/product/';
-    private $per_page = 10;
+    public $per_page = 10;
 
     public function updateData($id)
     {
@@ -77,10 +77,18 @@ class ManageProduct_model extends CI_Model
         return $getData;
     }
 
+    public function getDataCount()
+    {
+        $count = 0;
+        $count = $this->db->count_all_results($this->product_tbl);
+        return $count;
+    }
+
     private function fnc_calPageOffset($page)
     {
         return ($page - 1) * $this->per_page;
     }
+
 
     public function getDetail($id)
     {

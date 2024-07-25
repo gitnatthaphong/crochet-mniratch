@@ -40,8 +40,8 @@
                     <table class="table align-items-center table-striped">
                         <thead>
                             <tr>
-                                <td width="20" class="text-center">ลำดับ</td>
-                                <td>ชื่อสินค้า</td>
+                                <td width="100" class="text-center">ลำดับ</td>
+                                <td width="450">ชื่อสินค้า</td>
                                 <td class="text-center">สถานะ</td>
                                 <td class="text-center">วันที่สร้าง</td>
                                 <td class="text-center"><i class="fa-solid fa-gears"></i></td>
@@ -52,7 +52,7 @@
                                 <?php foreach($results as $key => $value) : ?>
                                     <tr>
                                         <td class="text-center">
-                                            <?= ($key + 1) ?>
+                                            <?= ($startNo++) ?>
                                         </td>
                                         <td>
                                             <?= $value['product_name'] ?>
@@ -64,11 +64,11 @@
                                             <?= dateTimeToDateThai($value['create_date']) ?>
                                         </td>
                                         <td class="text-center">
-                                            <a class="btn" href="<?= $action_link ?>form/<?= $value['product_id'] ?>">
+                                            <a class="btn" href="<?= $action_link ?>form/<?= $value['product_id'] ?>" title="แก้ไขข้อมูล">
                                                 <i class="fa-regular fa-pen-to-square"></i>
                                             </a>
 
-                                            <a onclick="return confirm('คุณต้องการลบรายการนี้ใช่หรือไม่ ?')" class="btn btn-danger" href="<?= $action_link ?>delete/<?= $value['product_id'] ?>">
+                                            <a onclick="return confirm('คุณต้องการลบรายการนี้ใช่หรือไม่ ?')" class="btn btn-danger" href="<?= $action_link ?>delete/<?= $value['product_id'] ?>" title="ลบข้อมูล">
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </a>
                                         </td>
@@ -81,6 +81,8 @@
                             <?php endif; ?>
                         </tbody>
                     </table>
+
+                   <?php !empty($allPage) && $this->load->view('component/pagination'); ?>
                 </div>
             </div>
 

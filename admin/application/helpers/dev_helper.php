@@ -12,6 +12,16 @@ if ( ! function_exists('_print_r'))
 	}
 }
 
+if ( ! function_exists('getPagination'))
+{
+	function getPagination(&$data, $countData, $page = 1, $per_page = 10)
+	{
+        $data['startNo'] = ($page - 1) * $per_page + 1;
+		$data['allPage'] = ceil($countData / $per_page);
+		$data['currentPage'] = $page;
+	}
+}
+
 if ( ! function_exists('dateTimeToDateThai'))
 {
 	function dateTimeToDateThai($date, $sortMonth = false)
@@ -93,3 +103,4 @@ if ( ! function_exists('dateTimeToDateTimeThai'))
 		}
 	}
 }
+

@@ -185,3 +185,17 @@ input::placeholder {
 .alert-danger {
 	background-image: none;
 }
+
+.pagination.customPagination {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.pagination.customPagination .page-item .page-link, .page-item span {
+	color: #67748e;
+}
+
+.pagination.customPagination .page-link:focus {
+	box-shadow: none;
+}

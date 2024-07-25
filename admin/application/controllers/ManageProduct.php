@@ -14,6 +14,10 @@ class ManageProduct extends MY_Controller
 	{
 		$data['titlePage'] = 'จัดการสินค้า';
 		$data['results'] = $this->model->getData($page);
+		$data['count'] = $this->model->getDataCount();
+
+		// Pagination
+		getPagination($data, $data['count'], $page, $this->model->per_page);
 
 		parent::view('manageProduct/index', $data);
 	}
