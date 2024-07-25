@@ -84,11 +84,21 @@
 <script>
     UseBootstrapTag(document.getElementById('example'))
 
+    // tinymce.init({
+    //     selector: 'textarea#tiny',
+    //     plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons accordion',
+    //     height: 600,
+    //     toolbar: "undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl",
+    //     menubar: 'file edit view insert format tools table help',
+    // });
+
+
     $(document).ready(function() {
 
         $('#product_image').on('change', function(event) {
             $('#previewBash').attr('src', URL.createObjectURL(event.target.files[0]));
         })
+
         
     })
 </script>

@@ -46,6 +46,9 @@ define('LINK', base_url() . 'admin/');
     <!-- Font Awesome Icons -->
     <link href="<?= ASSETS_PATH ?>css/nucleo-svg.css" rel="stylesheet" />
     
+    <!-- tinymce -->
+    <script src="<?= ASSETS_PATH ?>js/plugins/tinymce/tinymce.min.js"></script>
+    <!-- tinymce -->
     
     <link href="<?= ASSETS_PATH ?>fonts/fontawesome/js/all.min.js" rel="stylesheet" />
     <link href="<?= ASSETS_PATH ?>fonts/fontawesome/css/all.min.css" rel="stylesheet" />
