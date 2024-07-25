@@ -83,7 +83,7 @@ define('LINK', base_url() . 'admin/');
 
     <div class="preloader">
         <div class="loader"></div>
-        <p>Loading...</p>
+        <p>กำลังโหลด...</p>
     </div>
 
     <div class="customMainContent">

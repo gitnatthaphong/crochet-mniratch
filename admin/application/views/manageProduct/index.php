@@ -57,13 +57,11 @@
                                         <td>
                                             <?= $value['product_name'] ?>
                                         </td>
-                                        <td class="text-center">
-                                            <span class="<?= $value['status'] == 1 ? 'text-success' : 'text-danger' ?>">
-                                                <?= $value['status'] == 1 ? 'เผยแพร่' : 'ไม่เผยแพร่' ?>
-                                            </span>
+                                        <td class="text-center <?= $value['status'] == 1 ? 'text-success' : 'text-danger' ?>">
+                                            <?= $value['status'] == 1 ? 'เผยแพร่' : 'ไม่เผยแพร่' ?>
                                         </td>
                                         <td class="text-center">
-                                            <?= $value['create_date'] ?>
+                                            <?= dateTimeToDateThai($value['create_date']) ?>
                                         </td>
                                         <td class="text-center">
                                             <a class="btn" href="<?= $action_link ?>form/<?= $value['product_id'] ?>">
