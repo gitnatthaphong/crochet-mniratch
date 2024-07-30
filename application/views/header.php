@@ -109,7 +109,7 @@ define('ASSETS_PATH', APP_BASE_URL . 'assets/')
 
     <div class="preloader">
         <div class="loader"></div>
-        <p>Loading...</p>
+        <p>กำลังโหลด...</p>
     </div>
 
     <div class="content">
@@ -160,7 +160,7 @@ define('ASSETS_PATH', APP_BASE_URL . 'assets/')
                         
                         <div class="d-none d-lg-flex">
                             <ul class="navbar-nav mb-2 mb-lg-0">
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">หน้าแรก</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="#home">หน้าแรก</a></li>
                                 <li class="nav-item"><a class="nav-link" aria-current="page" href="#works">เกี่ยวกับ</a></li>
                                 <li class="nav-item"><a class="nav-link" aria-current="page" href="#explore">สินค้า</a></li>
                                 <li class="nav-item"><a class="nav-link" aria-current="page" href="#contact">ติดต่อ</a></li>
@@ -171,7 +171,7 @@ define('ASSETS_PATH', APP_BASE_URL . 'assets/')
                     <div class="d-md-none d-flex">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mb-2 mb-lg-0">
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">หน้าแรก</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="#home">หน้าแรก</a></li>
                                 <li class="nav-item"><a class="nav-link" aria-current="page" href="#works">เกี่ยวกับ</a></li>
                                 <li class="nav-item"><a class="nav-link" aria-current="page" href="#explore">สินค้า</a></li>
                                 <li class="nav-item"><a class="nav-link" aria-current="page" href="#contact">ติดต่อ</a></li>
