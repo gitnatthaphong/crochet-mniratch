@@ -82,12 +82,18 @@ define('ASSETS_PATH', APP_BASE_URL . 'assets/')
 
     <!-- FORMAT NUMBER -->
     <script src="<?= ASSETS_PATH ?>js/numeral/min/numeral.min.js"></script>
+    
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="<?= ASSETS_PATH ?>js/cookieconsent/cookieconsent.css">
+    <script type="module" src="<?= ASSETS_PATH ?>js/cookieconsent/cookieconsent.js"></script>
     <!-- PLUGIN เพิ่มเติม -->
+
 
     <!-- BLOCK Custom -->
     <!-- //default// -->
     <link rel="stylesheet" href="<?= ASSETS_PATH ?>css/style.css">
     <link rel="stylesheet" href="<?= ASSETS_PATH ?>css/responsive.css">
+    
 
     <!-- //custom// -->
     <link rel="stylesheet" href="<?= ASSETS_PATH ?>css/customStyle.css">
@@ -149,17 +155,27 @@ define('ASSETS_PATH', APP_BASE_URL . 'assets/')
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+                        
                         <a class="navbar-brand" href="index.html">Crochet by <span>Mniratch</span></a>
                         
-                        <div class="d-flex">
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav mb-2 mb-lg-0">
-                                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">หน้าแรก</a></li>
-                                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#works">เกี่ยวกับ</a></li>
-                                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#explore">สินค้า</a></li>
-                                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#contact">ติดต่อ</a></li>
-                                </ul>
-                            </div>
+                        <div class="d-none d-lg-flex">
+                            <ul class="navbar-nav mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">หน้าแรก</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="#works">เกี่ยวกับ</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="#explore">สินค้า</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="#contact">ติดต่อ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-md-none d-flex">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">หน้าแรก</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="#works">เกี่ยวกับ</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="#explore">สินค้า</a></li>
+                                <li class="nav-item"><a class="nav-link" aria-current="page" href="#contact">ติดต่อ</a></li>
+                            </ul>
                         </div>
                     </div>
                 </nav>

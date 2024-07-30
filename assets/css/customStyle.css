@@ -129,6 +129,14 @@ img {
     animation: none;
 }
 
+.top-area .customNav {
+    position: inherit;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    width: 100%;
+}
+
 .top-area .customNav a.navbar-brand,
 .top-area .customNav a.navbar-brand:hover {
     display: inline-block;
