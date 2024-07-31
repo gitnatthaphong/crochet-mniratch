@@ -11,6 +11,26 @@ class MY_Controller extends CI_Controller
         parent::__construct();
         $this->cur_class = $this->router->class;
         $this->cur_method = $this->router->method;
+        
+        $this->verifyCredential();
+    }
+
+    public function verifyCredential()
+    {
+        if($this->cur_class != 'Login') {
+            
+            $token = get_cookie('token');
+            if(empty($token)) {
+                redirect(base_url() . 'admin/Login');
+            }
+            
+            if(!empty($token) && !empty($this->session->userdata['token']) && $token != $this->session->userdata['token']) {
+                redirect(base_url() . 'admin/Login');
+            }
+            
+        }
+
+
     }
 
     protected function getPagination(&$data, $countData, $page = 1, $per_page = 10)
