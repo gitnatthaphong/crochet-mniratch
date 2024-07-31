@@ -56,9 +56,6 @@
 
                         <div class="previewImage text-center">
                             <img class="previewBash" id="previewBash" src="<?= !empty($results) && !empty($results['image_path']) ? $results['image_path'] : '' ?>">
-                            <?php if(!empty($results) && !empty($results['image_path'])) : ?>
-                                <input type="hidden" name="old_banner_image" value="<?= $results['image_path'] ?>">
-                            <?php endif ?>
                         </div>
 
                         <div class="invalid-feedback">
@@ -81,14 +78,11 @@
                     </div>
 
                     <div class="col-12">
-                        <label for="total_shop" class="form-label">รูปภาพพื้นหลัง <span class="text-danger">*</span></label>
-                        <input type="file" class="form-control" id="total_shop" name="total_shop" placeholder="รูปภาพพื้นหลัง" accept="image/*" <?= !empty($results) && !empty($results['image_path']) ? '' : 'required' ?>>
+                        <label for="bg_count" class="form-label">รูปภาพพื้นหลัง <span class="text-danger">*</span></label>
+                        <input type="file" class="form-control" id="bg_count" name="bg_count" placeholder="รูปภาพพื้นหลัง" accept="image/*" <?= !empty($results) && !empty($results['image_path']) ? '' : 'required' ?>>
 
                         <div class="previewImage text-center">
                             <img class="previewBash" id="previewBash" src="<?= !empty($results) && !empty($results['image_path']) ? $results['image_path'] : '' ?>">
-                            <?php if(!empty($results) && !empty($results['image_path'])) : ?>
-                                <input type="hidden" name="old_total_shop" value="<?= $results['image_path'] ?>">
-                            <?php endif ?>
                         </div>
 
                         <div class="invalid-feedback">

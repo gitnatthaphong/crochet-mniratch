@@ -29,4 +29,14 @@ class Login extends MY_Controller
         }
     }
 
+    public function logout()
+    {
+        unset($this->session->userdata['username']);
+        unset($this->session->userdata['password']);
+        unset($this->session->userdata['token']);
+        delete_cookie('token');
+
+        redirect(base_url());
+    }
+
 }

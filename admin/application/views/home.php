@@ -1,13 +1,44 @@
+<style>
+	.card {
+		height: 400px;
+	}
+
+	.card .card-body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		width: 100%;
+	}
+
+	.card .card-body .img-logo {
+		border-radius: 50%;
+	}
+</style>
+
 <div class="container-fluid py-1 pb-4 px-3">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-      <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="<?= LINK ?>">หน้าหลัก</a></li>
-      <li class="breadcrumb-item text-sm text-white active" aria-current="page"><?= $titlePage ?></li>
-    </ol>
-    <h6 class="font-weight-bolder text-white mb-0"><?= $titlePage ?></h6>
-  </nav>
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+			<li class="breadcrumb-item text-sm text-white active" aria-current="page">หน้าหลัก</li>
+			<!-- <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="<?= LINK ?>">หน้าหลัก</a></li> -->
+			<!-- <li class="breadcrumb-item text-sm text-white active" aria-current="page"><?= $titlePage ?></li> -->
+		</ol>
+		<!-- <h6 class="font-weight-bolder text-white mb-0">หน้าหลัก</h6> -->
+	</nav>
 </div>
 
+<div class="row">
+	<div class="card">
+		<div class="card-body p-3 text-center">
+			<h3 class="font-weight-bold">ยินดีต้อนรับเข้าสู่ระบบจัดการเว็บไซต์</h3>
+
+			<h4 class="font-weight-bold">Crochet by <span class="text-primary">Mniratch</span></h4>
+			<img src="<?= ASSETS_PATH ?>logo/favicon.ico" alt="logo" class="img-logo">
+		</div>
+	</div>
+</div>
+<!-- 
 <div class="row">
   <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
     <div class="card">
@@ -377,88 +408,88 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<script>
-  var ctx1 = document.getElementById("chart-line").getContext("2d");
+<!-- <script>
+	var ctx1 = document.getElementById("chart-line").getContext("2d");
 
-  var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+	var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
 
-  gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
-  gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
-  gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
-  new Chart(ctx1, {
-    type: "line",
-    data: {
-      labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-      datasets: [{
-        label: "Mobile apps",
-        tension: 0.4,
-        borderWidth: 0,
-        pointRadius: 0,
-        borderColor: "#5e72e4",
-        backgroundColor: gradientStroke1,
-        borderWidth: 3,
-        fill: true,
-        data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-        maxBarThickness: 6
+	gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
+	gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
+	gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
+	new Chart(ctx1, {
+		type: "line",
+		data: {
+			labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+			datasets: [{
+				label: "Mobile apps",
+				tension: 0.4,
+				borderWidth: 0,
+				pointRadius: 0,
+				borderColor: "#5e72e4",
+				backgroundColor: gradientStroke1,
+				borderWidth: 3,
+				fill: true,
+				data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+				maxBarThickness: 6
 
-      }],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          display: false,
-        }
-      },
-      interaction: {
-        intersect: false,
-        mode: 'index',
-      },
-      scales: {
-        y: {
-          grid: {
-            drawBorder: false,
-            display: true,
-            drawOnChartArea: true,
-            drawTicks: false,
-            borderDash: [5, 5]
-          },
-          ticks: {
-            display: true,
-            padding: 10,
-            color: '#fbfbfb',
-            font: {
-              size: 11,
-              family: "Open Sans",
-              style: 'normal',
-              lineHeight: 2
-            },
-          }
-        },
-        x: {
-          grid: {
-            drawBorder: false,
-            display: false,
-            drawOnChartArea: false,
-            drawTicks: false,
-            borderDash: [5, 5]
-          },
-          ticks: {
-            display: true,
-            color: '#ccc',
-            padding: 20,
-            font: {
-              size: 11,
-              family: "Open Sans",
-              style: 'normal',
-              lineHeight: 2
-            },
-          }
-        },
-      },
-    },
-  });
-</script>
+			}],
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			plugins: {
+				legend: {
+					display: false,
+				}
+			},
+			interaction: {
+				intersect: false,
+				mode: 'index',
+			},
+			scales: {
+				y: {
+					grid: {
+						drawBorder: false,
+						display: true,
+						drawOnChartArea: true,
+						drawTicks: false,
+						borderDash: [5, 5]
+					},
+					ticks: {
+						display: true,
+						padding: 10,
+						color: '#fbfbfb',
+						font: {
+							size: 11,
+							family: "Open Sans",
+							style: 'normal',
+							lineHeight: 2
+						},
+					}
+				},
+				x: {
+					grid: {
+						drawBorder: false,
+						display: false,
+						drawOnChartArea: false,
+						drawTicks: false,
+						borderDash: [5, 5]
+					},
+					ticks: {
+						display: true,
+						color: '#ccc',
+						padding: 20,
+						font: {
+							size: 11,
+							family: "Open Sans",
+							style: 'normal',
+							lineHeight: 2
+						},
+					}
+				},
+			},
+		},
+	});
+</script> -->

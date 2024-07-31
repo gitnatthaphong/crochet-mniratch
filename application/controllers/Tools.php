@@ -45,6 +45,56 @@ class Tools extends MY_Controller
 		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 		$this->db->query($sql);
 
+		$sql = "CREATE TABLE IF NOT EXISTS `sys_config` (
+			`field_name` TEXT,
+			`field_value` TEXT DEFAULT NULL
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+		$this->db->query($sql);
+
+		$count = $this->db->get('sys_config')->num_rows();
+		if($count == 0) {
+			$dataInsert = [];
+
+			$dataInsert[] = [
+				'field_name' => 'banner_title',
+				'field_value' => 'งานถักไหมพรมคอตตอนซอฟท์ที่ดีที่สุดในการทำ ตุ๊กตาและของตกแต่ง'
+			];
+			$dataInsert[] = [
+				'field_name' => 'banner_detail',
+				'field_value' => 'ค้นหาของขวัญสุดพิเศษได้ที่นี่ ไม่ว่าจะเนื่องในโอกาสสำคัญไหนๆ เราขอเป็นของขวัญอันล้ำค่าสำหรับคนพิเศษของคุณ'
+			];
+			$dataInsert[] = [
+				'field_name' => 'total_shop',
+				'field_value' => '2000'
+			];
+			$dataInsert[] = [
+				'field_name' => 'contact_title',
+				'field_value' => 'ติดตามข่าวสาร'
+			];
+			$dataInsert[] = [
+				'field_name' => 'contact_detail',
+				'field_value' => 'หากคุณต้องการติดตามข่าวสารหรือสอบถามการสั่งซื้อสินค้าได้ช่องทาง FaceBook และ Instragram ของเรา'
+			];
+			$dataInsert[] = [
+				'field_name' => 'social_facebook',
+				'field_value' => 'https://www.facebook.com/niratshoppingg/'
+			];
+			$dataInsert[] = [
+				'field_name' => 'social_instagram',
+				'field_value' => 'https://www.instagram.com/crochet_by_mniratch/'
+			];
+			$dataInsert[] = [
+				'field_name' => 'banner_image',
+				'field_value' => null
+			];
+			$dataInsert[] = [
+				'field_name' => 'bg_count',
+				'field_value' => null
+			];
+			
+			$this->db->insert_batch('sys_config', $dataInsert);
+		}
+
 		die('Create Succsess');
 	}
 }

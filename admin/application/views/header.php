@@ -101,9 +101,9 @@ define('LINK', base_url() . 'admin/');
                 <ul class="navbar-nav">
                     <!-- BLOCK Menu -->
                     <li class="nav-item">
-                        <a class="nav-link <?= strtolower($this->cur_class) == 'home' ? 'active' : '' ?>" href="<?= LINK ?>" title="แดชบอร์ด">
+                        <a class="nav-link <?= strtolower($this->cur_class) == 'home' ? 'active' : '' ?>" href="<?= LINK ?>" title="หน้าหลัก">
                             <i class="fa-solid fa-tv"></i>
-                            <span class="nav-link-text ms-1">แดชบอร์ด</span>
+                            <span class="nav-link-text ms-1">หน้าหลัก</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -139,7 +139,7 @@ define('LINK', base_url() . 'admin/');
                         </a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link " href="<?= LINK ?>Home/signOut" title="ออกจากระบบ">
+                        <a class="nav-link " href="<?= LINK ?>Login/logout" title="ออกจากระบบ">
                             <i class="fa-solid fa-power-off"></i>
                             <span class="nav-link-text ms-1">ออกจากระบบ</span>
                         </a>
