@@ -1,209 +1,26 @@
-@font-face {
-	font-family: "IBMPlexSansThai";
-	src: url(../fonts/IBMPlexSansThai/IBMPlexSansThai-Medium.ttf);
+:root {
+    --primary-color: #FFB1B1;
+    --secondary-color: #FFCBCB;
 }
 
-:root {
-	--primary-color: #ffb1b1;
-	--secondary-color: #ffcbcb;
+@font-face {
+    font-family: 'IBMPlexSansThai';
+    src: url(../fonts/IBMPlexSansThai/IBMPlexSansThai-Medium.ttf);
 }
 
 ::selection {
-	color: #fff;
-	background: var(--primary-color);
+    color: #fff;
+    background: var(--primary-color);
 }
 
 body {
-	font-family: "IBMPlexSansThai", sans-serif;
+    font-family: 'IBMPlexSansThai', sans-serif;
 }
 
-.text-primary {
-	color: var(--primary-color) !important;
+.text-pink {
+    color: var(--primary-color) !important;
 }
 
-.bg-primary {
-	background-color: var(--secondary-color) !important;
-}
-
-.navbar-vertical.navbar-expand-xs .navbar-collapse {
-	height: 100%;
-}
-
-:not(.main-content) .navbar .dropdown .dropdown-menu {
-	top: 0.25rem !important;
-}
-
-.dropdown .dropdown-menu.dropdown-menu-end {
-	right: 8px !important;
-}
-
-.navbar-expand-lg .navbar-nav .nav-link i {
-	font-size: 18px;
-}
-
-.customMainContent {
-	display: none;
-}
-
-.preloader {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 100vh;
-	flex-direction: column;
-	gap: 30px;
-}
-
-.preloader .loader {
-	width: 20px;
-	aspect-ratio: 1;
-	border-radius: 50%;
-	background: var(--primary-color);
-	box-shadow: 0 0 0 0 #0004;
-	animation: l1 1s infinite;
-}
-
-@keyframes l1 {
-	100% {
-		box-shadow: 0 0 0 30px #0000;
-	}
-}
-
-.navbar-vertical.navbar-expand-xs .navbar-nav .nav-link {
-	padding-left: 36px;
-}
-
-.btn-search {
-	border-radius: 50px;
-}
-
-.btn-primary,
-.btn-primary:hover {
-	background-color: var(--primary-color);
-	border-color: var(--primary-color);
-}
-
-.btn-outline-primary,
-.btn-outline-primary:hover {
-	border-color: var(--primary-color);
-	color: var(--primary-color);
-}
-
-.btn-outline-primary:hover:not(.active) {
-	border-color: var(--primary-color);
-	color: var(--primary-color);
-}
-
-.form-control:focus {
-	border-color: var(--primary-color);
-}
-
-.btn-check:checked + .btn,
-.btn-check:active + .btn,
-.btn:active,
-.btn.active,
-.btn.show {
-    color: #fff
-}
-
-
-.btn:focus,
-.btn:hover,
-.btn:active {
-    outline: none;
-	box-shadow: none;
-}
-
-.btn {
-    padding: 6px 10px;
-}
-
-.customCard {
-	min-height: 70vh;
-	padding: 20px 30px;
-}
-
-.use-bootstrap-tag .input-wrapper input {
-	color: #495057;
-	margin-top: -12px;
-}
-
-.use-bootstrap-tag {
-	min-height: 70px;
-}
-
-.use-bootstrap-tag.focus {
-	border-color: var(--primary-color);
-}
-
-.use-bootstrap-tag.focus,
-*:focus {
-    outline: none;
-	box-shadow: none
-}
-
-
-input:hover,
-input:active,
-input:focus {
-	outline: none !important;
-	border-color: var(--primary-color);
-}
-
-input::placeholder {
-	color: #d2d6da !important;
-}
-
-.customTable td{
-	font-size: 14px;
-}
-
-.customTable thead td{
-	font-weight: bold;
-}
-
-.was-validated .form-control:invalid+.use-bootstrap-tag, .form-control.is-invalid+.use-bootstrap-tag {
-	border: #EE4E4E 1px solid;
-}
-
-.was-validated .form-control:valid+.use-bootstrap-tag, .form-control.is-invalid+.use-bootstrap-tag {
-	border: #7ABA78 1px solid;
-}
-
-.was-validated .form-check-input:valid~.form-check-label, .form-check-input.is-valid~.form-check-label {
-	color: unset;
-}
-
-.was-validated .form-control:valid+.use-bootstrap-tag.focus, .form-control.is-valid+.use-bootstrap-tag.focus,
-.was-validated .form-control:invalid+.use-bootstrap-tag.focus, .form-control.is-invalid+.use-bootstrap-tag.focus {
-	box-shadow: none;
-	border: var(--primary-color) 1px solid;
-}
-
-.text-validate-ci p {
-	font-size: 12px;
-	margin-bottom: 0;
-}
-
-.alert-danger {
-	background-image: none;
-}
-
-.pagination.customPagination {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
-
-.pagination.customPagination .page-item .page-link, .page-item span {
-	color: #67748e;
-}
-
-.pagination.customPagination .page-link:focus {
-	box-shadow: none;
-}
-
-.h-60 {
-	height: 60px !important;
+.card.card-pink {
+    border-top: 2px solid var(--primary-color); 
 }

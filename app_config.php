@@ -5,10 +5,10 @@ $_SERVER['CI_ENV'] = 'development'; //production, development
 define('ENCRYPTION_KEY', '5a4fe08359c7f97380e408c717ef42c86939cd86');
 
 define('APP_BASE_URL', getDomian());
-define('APP_HOST', 'mysqldb');
+define('APP_HOST', 'localhost');
 define('APP_USERNAME', 'root');
-define('APP_PASSWORD', '1234');
-define('APP_DATABASE', 'handmade');
+define('APP_PASSWORD', '');
+define('APP_DATABASE', 'crochet');
 
 
 function getDomian()
