@@ -1,3 +1,5 @@
+</section>
+</div>
 <footer class="main-footer">
     <div class="footer-left">
         &copy; <script>document.write(new Date().getFullYear())</script>

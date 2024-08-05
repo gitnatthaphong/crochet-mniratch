@@ -1,138 +1,193 @@
-<style>
-	.card {
-		height: 400px;
-	}
-
-	.card .card-body {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		height: 100%;
-		width: 100%;
-	}
-
-	.card .card-body .img-logo {
-		border-radius: 50%;
-	}
-</style>
-
-<div class="container-fluid py-1 pb-4 px-3">
-	<nav aria-label="breadcrumb">
-		<ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-			<li class="breadcrumb-item text-sm text-white active" aria-current="page">หน้าหลัก</li>
-			<!-- <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="<?= LINK ?>">หน้าหลัก</a></li> -->
-			<!-- <li class="breadcrumb-item text-sm text-white active" aria-current="page"><?= $titlePage ?></li> -->
-		</ol>
-		<!-- <h6 class="font-weight-bolder text-white mb-0">หน้าหลัก</h6> -->
-	</nav>
+<div class="section-header">
+  <h1>Dashboard</h1>
 </div>
-
 <div class="row">
-	<div class="card">
-		<div class="card-body p-3 text-center">
-			<h3 class="font-weight-bold">ยินดีต้อนรับเข้าสู่ระบบจัดการเว็บไซต์</h3>
-
-			<h4 class="font-weight-bold">Crochet by <span class="text-primary">Mniratch</span></h4>
-			<img src="<?= ASSETS_PATH ?>logo/favicon.ico" alt="logo" class="img-logo">
-		</div>
-	</div>
+  <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-primary">
+        <i class="far fa-user"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>Total Admin</h4>
+        </div>
+        <div class="card-body">
+          10
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-danger">
+        <i class="far fa-newspaper"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>News</h4>
+        </div>
+        <div class="card-body">
+          42
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-warning">
+        <i class="far fa-file"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>Reports</h4>
+        </div>
+        <div class="card-body">
+          1,201
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-success">
+        <i class="fas fa-circle"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>Online Users</h4>
+        </div>
+        <div class="card-body">
+          47
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- 
 <div class="row">
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+  <div class="col-lg-8 col-md-12 col-12 col-sm-12">
     <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
-              <h5 class="font-weight-bolder">
-                $53,000
-              </h5>
-              <p class="mb-0">
-                <span class="text-success text-sm font-weight-bolder">+55%</span>
-                since yesterday
-              </p>
-            </div>
+      <div class="card-header">
+        <h4>Statistics</h4>
+        <div class="card-header-action">
+          <div class="btn-group">
+            <a href="#" class="btn btn-primary">Week</a>
+            <a href="#" class="btn">Month</a>
           </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-              <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-            </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <canvas id="myChart" height="182"></canvas>
+        <div class="statistic-details mt-sm-4">
+          <div class="statistic-details-item">
+            <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 7%</span>
+            <div class="detail-value">$243</div>
+            <div class="detail-name">Today's Sales</div>
+          </div>
+          <div class="statistic-details-item">
+            <span class="text-muted"><span class="text-danger"><i class="fas fa-caret-down"></i></span> 23%</span>
+            <div class="detail-value">$2,902</div>
+            <div class="detail-name">This Week's Sales</div>
+          </div>
+          <div class="statistic-details-item">
+            <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span>9%</span>
+            <div class="detail-value">$12,821</div>
+            <div class="detail-name">This Month's Sales</div>
+          </div>
+          <div class="statistic-details-item">
+            <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 19%</span>
+            <div class="detail-value">$92,142</div>
+            <div class="detail-name">This Year's Sales</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+  <div class="col-lg-4 col-md-12 col-12 col-sm-12">
     <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
-              <h5 class="font-weight-bolder">
-                2,300
-              </h5>
-              <p class="mb-0">
-                <span class="text-success text-sm font-weight-bolder">+3%</span>
-                since last week
-              </p>
+      <div class="card-header">
+        <h4>Recent Activities</h4>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled list-unstyled-border">
+          <li class="media">
+            <img class="mr-3 rounded-circle" width="50" src="<?= ASSETS_PATH ?>img/avatar/avatar-1.png" alt="avatar">
+            <div class="media-body">
+              <div class="float-right text-primary">Now</div>
+              <div class="media-title">Farhan A Mujib</div>
+              <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
             </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-              <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+          </li>
+          <li class="media">
+            <img class="mr-3 rounded-circle" width="50" src="<?= ASSETS_PATH ?>img/avatar/avatar-2.png" alt="avatar">
+            <div class="media-body">
+              <div class="float-right">12m</div>
+              <div class="media-title">Ujang Maman</div>
+              <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
             </div>
-          </div>
+          </li>
+          <li class="media">
+            <img class="mr-3 rounded-circle" width="50" src="<?= ASSETS_PATH ?>img/avatar/avatar-3.png" alt="avatar">
+            <div class="media-body">
+              <div class="float-right">17m</div>
+              <div class="media-title">Rizal Fakhri</div>
+              <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+            </div>
+          </li>
+          <li class="media">
+            <img class="mr-3 rounded-circle" width="50" src="<?= ASSETS_PATH ?>img/avatar/avatar-4.png" alt="avatar">
+            <div class="media-body">
+              <div class="float-right">21m</div>
+              <div class="media-title">Alfa Zulkarnain</div>
+              <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+            </div>
+          </li>
+        </ul>
+        <div class="text-center pt-1 pb-1">
+          <a href="#" class="btn btn-primary btn-lg btn-round">
+            View All
+          </a>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+</div>
+<div class="row">
+  <div class="col-lg-6 col-md-12 col-12 col-sm-12">
     <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">New Clients</p>
-              <h5 class="font-weight-bolder">
-                +3,462
-              </h5>
-              <p class="mb-0">
-                <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                since last quarter
-              </p>
-            </div>
-          </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-              <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
+      <div class="card-body pt-2 pb-2">
+        <div id="myWeather">Please wait</div>
       </div>
     </div>
   </div>
-  <div class="col-xl-3 col-sm-6">
+  <div class="col-lg-6 col-md-12 col-12 col-sm-12">
     <div class="card">
-      <div class="card-body p-3">
-        <div class="row">
-          <div class="col-8">
-            <div class="numbers">
-              <p class="text-sm mb-0 text-uppercase font-weight-bold">Sales</p>
-              <h5 class="font-weight-bolder">
-                $103,430
-              </h5>
-              <p class="mb-0">
-                <span class="text-success text-sm font-weight-bolder">+5%</span> than last month
-              </p>
+      <div class="card-header">
+        <h4>Authors</h4>
+      </div>
+      <div class="card-body">
+        <div class="row pb-2">
+          <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
+            <div class="avatar-item mb-0">
+              <img alt="image" src="<?= ASSETS_PATH ?>img/avatar/avatar-5.png" class="img-fluid" data-toggle="tooltip" title="Alfa Zulkarnain">
+              <div class="avatar-badge" title="Editor" data-toggle="tooltip"><i class="fas fa-wrench"></i></div>
             </div>
           </div>
-          <div class="col-4 text-end">
-            <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-              <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+          <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
+            <div class="avatar-item mb-0">
+              <img alt="image" src="<?= ASSETS_PATH ?>img/avatar/avatar-4.png" class="img-fluid" data-toggle="tooltip" title="Egi Ferdian">
+              <div class="avatar-badge" title="Admin" data-toggle="tooltip"><i class="fas fa-cog"></i></div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
+            <div class="avatar-item mb-0">
+              <img alt="image" src="<?= ASSETS_PATH ?>img/avatar/avatar-1.png" class="img-fluid" data-toggle="tooltip" title="Jaka Ramadhan">
+              <div class="avatar-badge" title="Author" data-toggle="tooltip"><i class="fas fa-pencil-alt"></i></div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-3 col-lg-3 mb-4 mb-md-0">
+            <div class="avatar-item mb-0">
+              <img alt="image" src="<?= ASSETS_PATH ?>img/avatar/avatar-2.png" class="img-fluid" data-toggle="tooltip" title="Ryan">
+              <div class="avatar-badge" title="Admin" data-toggle="tooltip"><i class="fas fa-cog"></i></div>
             </div>
           </div>
         </div>
@@ -140,356 +195,489 @@
     </div>
   </div>
 </div>
-<div class="row mt-4">
-  <div class="col-lg-7 mb-lg-0 mb-4">
-    <div class="card z-index-2 h-100">
-      <div class="card-header pb-0 pt-3 bg-transparent">
-        <h6 class="text-capitalize">Sales overview</h6>
-        <p class="text-sm mb-0">
-          <i class="fa fa-arrow-up text-success"></i>
-          <span class="font-weight-bold">4% more</span> in 2021
-        </p>
-      </div>
-      <div class="card-body p-3">
-        <div class="chart">
-          <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-5">
-    <div class="card card-carousel overflow-hidden h-100 p-0">
-      <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-        <div class="carousel-inner border-radius-lg h-100">
-          <div class="carousel-item h-100 active" style="background-image: url('<?= ASSETS_PATH ?>img/carousel-1.jpg'); background-size: cover;">
-            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                <i class="ni ni-camera-compact text-dark opacity-10"></i>
-              </div>
-              <h5 class="text-white mb-1">Get started with Argon</h5>
-              <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
-            </div>
-          </div>
-          <div class="carousel-item h-100" style="background-image: url('<?= ASSETS_PATH ?>img/carousel-2.jpg'); background-size: cover;">
-            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                <i class="ni ni-bulb-61 text-dark opacity-10"></i>
-              </div>
-              <h5 class="text-white mb-1">Faster way to create web pages</h5>
-              <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
-            </div>
-          </div>
-          <div class="carousel-item h-100" style="background-image: url('<?= ASSETS_PATH ?>img/carousel-3.jpg');background-size: cover;">
-            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                <i class="ni ni-trophy text-dark opacity-10"></i>
-              </div>
-              <h5 class="text-white mb-1">Share with us your design tips!</h5>
-              <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row mt-4">
-  <div class="col-lg-7 mb-lg-0 mb-4">
-    <div class="card ">
-      <div class="card-header pb-0 p-3">
-        <div class="d-flex justify-content-between">
-          <h6 class="mb-2">Sales by Country</h6>
-        </div>
-      </div>
-      <div class="table-responsive">
-        <table class="table align-items-center ">
-          <tbody>
-            <tr>
-              <td class="w-30">
-                <div class="d-flex px-2 py-1 align-items-center">
-                  <div>
-                    <img src="<?= ASSETS_PATH ?>img/icons/flags/US.png" alt="Country flag">
-                  </div>
-                  <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">United States</h6>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">2500</h6>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$230,900</h6>
-                </div>
-              </td>
-              <td class="align-middle text-sm">
-                <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">29.9%</h6>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="w-30">
-                <div class="d-flex px-2 py-1 align-items-center">
-                  <div>
-                    <img src="<?= ASSETS_PATH ?>img/icons/flags/DE.png" alt="Country flag">
-                  </div>
-                  <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">Germany</h6>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">3.900</h6>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$440,000</h6>
-                </div>
-              </td>
-              <td class="align-middle text-sm">
-                <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">40.22%</h6>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="w-30">
-                <div class="d-flex px-2 py-1 align-items-center">
-                  <div>
-                    <img src="<?= ASSETS_PATH ?>img/icons/flags/GB.png" alt="Country flag">
-                  </div>
-                  <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">Great Britain</h6>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">1.400</h6>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$190,700</h6>
-                </div>
-              </td>
-              <td class="align-middle text-sm">
-                <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">23.44%</h6>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="w-30">
-                <div class="d-flex px-2 py-1 align-items-center">
-                  <div>
-                    <img src="<?= ASSETS_PATH ?>img/icons/flags/BR.png" alt="Country flag">
-                  </div>
-                  <div class="ms-4">
-                    <p class="text-xs font-weight-bold mb-0">Country:</p>
-                    <h6 class="text-sm mb-0">Brasil</h6>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                  <h6 class="text-sm mb-0">562</h6>
-                </div>
-              </td>
-              <td>
-                <div class="text-center">
-                  <p class="text-xs font-weight-bold mb-0">Value:</p>
-                  <h6 class="text-sm mb-0">$143,960</h6>
-                </div>
-              </td>
-              <td class="align-middle text-sm">
-                <div class="col text-center">
-                  <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                  <h6 class="text-sm mb-0">32.14%</h6>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-5">
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-12">
     <div class="card">
-      <div class="card-header pb-0 p-3">
-        <h6 class="mb-0">Categories</h6>
+      <div class="card-header">
+        <h4>Referral URL</h4>
       </div>
-      <div class="card-body p-3">
-        <ul class="list-group">
-          <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-            <div class="d-flex align-items-center">
-              <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                <i class="ni ni-mobile-button text-white opacity-10"></i>
-              </div>
-              <div class="d-flex flex-column">
-                <h6 class="mb-1 text-dark text-sm">Devices</h6>
-                <span class="text-xs">250 in stock, <span class="font-weight-bold">346+ sold</span></span>
-              </div>
+      <div class="card-body">
+        <div class="mb-4">
+          <div class="text-small float-right font-weight-bold text-muted">2,100</div>
+          <div class="font-weight-bold mb-1">Google</div>
+          <div class="progress" data-height="3">
+            <div class="progress-bar" role="progressbar" data-width="80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-small float-right font-weight-bold text-muted">1,880</div>
+          <div class="font-weight-bold mb-1">Facebook</div>
+          <div class="progress" data-height="3">
+            <div class="progress-bar" role="progressbar" data-width="67%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-small float-right font-weight-bold text-muted">1,521</div>
+          <div class="font-weight-bold mb-1">Bing</div>
+          <div class="progress" data-height="3">
+            <div class="progress-bar" role="progressbar" data-width="58%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-small float-right font-weight-bold text-muted">884</div>
+          <div class="font-weight-bold mb-1">Yahoo</div>
+          <div class="progress" data-height="3">
+            <div class="progress-bar" role="progressbar" data-width="36%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-small float-right font-weight-bold text-muted">473</div>
+          <div class="font-weight-bold mb-1">Kodinger</div>
+          <div class="progress" data-height="3">
+            <div class="progress-bar" role="progressbar" data-width="28%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="text-small float-right font-weight-bold text-muted">418</div>
+          <div class="font-weight-bold mb-1">Multinity</div>
+          <div class="progress" data-height="3">
+            <div class="progress-bar" role="progressbar" data-width="20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h4>Popular Browser</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col text-center">
+            <div class="browser browser-chrome"></div>
+            <div class="mt-2 font-weight-bold">Chrome</div>
+            <div class="text-muted text-small"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 48%</div>
+          </div>
+          <div class="col text-center">
+            <div class="browser browser-firefox"></div>
+            <div class="mt-2 font-weight-bold">Firefox</div>
+            <div class="text-muted text-small"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 26%</div>
+          </div>
+          <div class="col text-center">
+            <div class="browser browser-safari"></div>
+            <div class="mt-2 font-weight-bold">Safari</div>
+            <div class="text-muted text-small"><span class="text-danger"><i class="fas fa-caret-down"></i></span> 14%</div>
+          </div>
+          <div class="col text-center">
+            <div class="browser browser-opera"></div>
+            <div class="mt-2 font-weight-bold">Opera</div>
+            <div class="text-muted text-small">7%</div>
+          </div>
+          <div class="col text-center">
+            <div class="browser browser-internet-explorer"></div>
+            <div class="mt-2 font-weight-bold">IE</div>
+            <div class="text-muted text-small"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 5%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mt-sm-5 mt-md-0">
+      <div class="card-header">
+        <h4>Visitors</h4>
+      </div>
+      <div class="card-body">
+        <div id="visitorMap"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-6 col-12">
+    <div class="card">
+      <div class="card-header">
+        <h4>This Week Stats</h4>
+        <div class="card-header-action">
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle btn btn-primary" data-toggle="dropdown">Filter</a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a href="#" class="dropdown-item has-icon"><i class="far fa-circle"></i> Electronic</a>
+              <a href="#" class="dropdown-item has-icon"><i class="far fa-circle"></i> T-shirt</a>
+              <a href="#" class="dropdown-item has-icon"><i class="far fa-circle"></i> Hat</a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">View All</a>
             </div>
-            <div class="d-flex">
-              <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="summary">
+          <div class="summary-info">
+            <h4>$1,053</h4>
+            <div class="text-muted">Sold 3 items on 2 customers</div>
+            <div class="d-block mt-2">
+              <a href="#">View All</a>
+            </div>
+          </div>
+          <div class="summary-item">
+            <h6>Item List <span class="text-muted">(3 Items)</span></h6>
+            <ul class="list-unstyled list-unstyled-border">
+              <li class="media">
+                <a href="#">
+                  <img class="mr-3 rounded" width="50" src="<?= ASSETS_PATH ?>img/products/product-1-50.png" alt="product">
+                </a>
+                <div class="media-body">
+                  <div class="media-right">$405</div>
+                  <div class="media-title"><a href="#">PlayStation 9</a></div>
+                  <div class="text-muted text-small">by <a href="#">Hasan Basri</a>
+                    <div class="bullet"></div> Sunday
+                  </div>
+                </div>
+              </li>
+              <li class="media">
+                <a href="#">
+                  <img class="mr-3 rounded" width="50" src="<?= ASSETS_PATH ?>img/products/product-2-50.png" alt="product">
+                </a>
+                <div class="media-body">
+                  <div class="media-right">$499</div>
+                  <div class="media-title"><a href="#">RocketZ</a></div>
+                  <div class="text-muted text-small">by <a href="#">Hasan Basri</a>
+                    <div class="bullet"></div> Sunday
+                  </div>
+                </div>
+              </li>
+              <li class="media">
+                <a href="#">
+                  <img class="mr-3 rounded" width="50" src="<?= ASSETS_PATH ?>img/products/product-3-50.png" alt="product">
+                </a>
+                <div class="media-body">
+                  <div class="media-right">$149</div>
+                  <div class="media-title"><a href="#">Xiaomay Readme 4.0</a></div>
+                  <div class="text-muted text-small">by <a href="#">Kusnaedi</a>
+                    <div class="bullet"></div> Tuesday
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h4 class="d-inline">Tasks</h4>
+        <div class="card-header-action">
+          <a href="#" class="btn btn-primary">View All</a>
+        </div>
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled list-unstyled-border">
+          <li class="media">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="cbx-1">
+              <label class="custom-control-label" for="cbx-1"></label>
+            </div>
+            <img class="mr-3 rounded-circle" width="50" src="<?= ASSETS_PATH ?>img/avatar/avatar-4.png" alt="avatar">
+            <div class="media-body">
+              <div class="badge badge-pill badge-danger mb-1 float-right">Not Finished</div>
+              <h6 class="media-title"><a href="#">Redesign header</a></h6>
+              <div class="text-small text-muted">Alfa Zulkarnain <div class="bullet"></div> <span class="text-primary">Now</span></div>
             </div>
           </li>
-          <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-            <div class="d-flex align-items-center">
-              <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                <i class="ni ni-tag text-white opacity-10"></i>
-              </div>
-              <div class="d-flex flex-column">
-                <h6 class="mb-1 text-dark text-sm">Tickets</h6>
-                <span class="text-xs">123 closed, <span class="font-weight-bold">15 open</span></span>
-              </div>
+          <li class="media">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="cbx-2" checked="">
+              <label class="custom-control-label" for="cbx-2"></label>
             </div>
-            <div class="d-flex">
-              <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+            <img class="mr-3 rounded-circle" width="50" src="<?= ASSETS_PATH ?>img/avatar/avatar-5.png" alt="avatar">
+            <div class="media-body">
+              <div class="badge badge-pill badge-primary mb-1 float-right">Completed</div>
+              <h6 class="media-title"><a href="#">Add a new component</a></h6>
+              <div class="text-small text-muted">Serj Tankian <div class="bullet"></div> 4 Min</div>
             </div>
           </li>
-          <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-            <div class="d-flex align-items-center">
-              <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                <i class="ni ni-box-2 text-white opacity-10"></i>
-              </div>
-              <div class="d-flex flex-column">
-                <h6 class="mb-1 text-dark text-sm">Error logs</h6>
-                <span class="text-xs">1 is active, <span class="font-weight-bold">40 closed</span></span>
-              </div>
+          <li class="media">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="cbx-3">
+              <label class="custom-control-label" for="cbx-3"></label>
             </div>
-            <div class="d-flex">
-              <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+            <img class="mr-3 rounded-circle" width="50" src="<?= ASSETS_PATH ?>img/avatar/avatar-2.png" alt="avatar">
+            <div class="media-body">
+              <div class="badge badge-pill badge-warning mb-1 float-right">Progress</div>
+              <h6 class="media-title"><a href="#">Fix modal window</a></h6>
+              <div class="text-small text-muted">Ujang Maman <div class="bullet"></div> 8 Min</div>
             </div>
           </li>
-          <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-            <div class="d-flex align-items-center">
-              <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                <i class="ni ni-satisfied text-white opacity-10"></i>
-              </div>
-              <div class="d-flex flex-column">
-                <h6 class="mb-1 text-dark text-sm">Happy users</h6>
-                <span class="text-xs font-weight-bold">+ 430</span>
-              </div>
+          <li class="media">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="cbx-4">
+              <label class="custom-control-label" for="cbx-4"></label>
             </div>
-            <div class="d-flex">
-              <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+            <img class="mr-3 rounded-circle" width="50" src="<?= ASSETS_PATH ?>img/avatar/avatar-1.png" alt="avatar">
+            <div class="media-body">
+              <div class="badge badge-pill badge-danger mb-1 float-right">Not Finished</div>
+              <h6 class="media-title"><a href="#">Remove unwanted classes</a></h6>
+              <div class="text-small text-muted">Farhan A Mujib <div class="bullet"></div> 21 Min</div>
             </div>
           </li>
         </ul>
       </div>
     </div>
   </div>
-</div> -->
+</div>
+<div class="row">
+  <div class="col-lg-5 col-md-12 col-12 col-sm-12">
+    <form method="post" class="needs-validation" novalidate="">
+      <div class="card">
+        <div class="card-header">
+          <h4>Quick Draft</h4>
+        </div>
+        <div class="card-body pb-0">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="title" class="form-control" required>
+            <div class="invalid-feedback">
+              Please fill in the title
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Content</label>
+            <textarea class="summernote-simple"></textarea>
+          </div>
+        </div>
+        <div class="card-footer pt-0">
+          <button class="btn btn-primary">Save Draft</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-lg-7 col-md-12 col-12 col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h4>Latest Posts</h4>
+        <div class="card-header-action">
+          <a href="#" class="btn btn-primary">View All</a>
+        </div>
+      </div>
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-striped mb-0">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Introduction Laravel 5
+                  <div class="table-links">
+                    in <a href="#">Web Development</a>
+                    <div class="bullet"></div>
+                    <a href="#">View</a>
+                  </div>
+                </td>
+                <td>
+                  <a href="#" class="font-weight-600"><img src="<?= ASSETS_PATH ?>img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                </td>
+                <td>
+                  <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Laravel 5 Tutorial - Installation
+                  <div class="table-links">
+                    in <a href="#">Web Development</a>
+                    <div class="bullet"></div>
+                    <a href="#">View</a>
+                  </div>
+                </td>
+                <td>
+                  <a href="#" class="font-weight-600"><img src="<?= ASSETS_PATH ?>img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                </td>
+                <td>
+                  <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Laravel 5 Tutorial - MVC
+                  <div class="table-links">
+                    in <a href="#">Web Development</a>
+                    <div class="bullet"></div>
+                    <a href="#">View</a>
+                  </div>
+                </td>
+                <td>
+                  <a href="#" class="font-weight-600"><img src="<?= ASSETS_PATH ?>img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                </td>
+                <td>
+                  <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Laravel 5 Tutorial - Migration
+                  <div class="table-links">
+                    in <a href="#">Web Development</a>
+                    <div class="bullet"></div>
+                    <a href="#">View</a>
+                  </div>
+                </td>
+                <td>
+                  <a href="#" class="font-weight-600"><img src="<?= ASSETS_PATH ?>img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                </td>
+                <td>
+                  <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Laravel 5 Tutorial - Deploy
+                  <div class="table-links">
+                    in <a href="#">Web Development</a>
+                    <div class="bullet"></div>
+                    <a href="#">View</a>
+                  </div>
+                </td>
+                <td>
+                  <a href="#" class="font-weight-600"><img src="<?= ASSETS_PATH ?>img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                </td>
+                <td>
+                  <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Laravel 5 Tutorial - Closing
+                  <div class="table-links">
+                    in <a href="#">Web Development</a>
+                    <div class="bullet"></div>
+                    <a href="#">View</a>
+                  </div>
+                </td>
+                <td>
+                  <a href="#" class="font-weight-600"><img src="<?= ASSETS_PATH ?>img/avatar/avatar-1.png" alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
+                </td>
+                <td>
+                  <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                  <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!-- <script>
-	var ctx1 = document.getElementById("chart-line").getContext("2d");
+<script>
+  var statistics_chart = document.getElementById("myChart").getContext('2d');
 
-	var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+  var myChart = new Chart(statistics_chart, {
+    type: 'line',
+    data: {
+      labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      datasets: [{
+        label: 'Statistics',
+        data: [640, 387, 530, 302, 430, 270, 488],
+        borderWidth: 5,
+        borderColor: '#6777ef',
+        backgroundColor: 'transparent',
+        pointBackgroundColor: '#fff',
+        pointBorderColor: '#6777ef',
+        pointRadius: 4
+      }]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      scales: {
+        yAxes: [{
+          gridLines: {
+            display: false,
+            drawBorder: false,
+          },
+          ticks: {
+            stepSize: 150
+          }
+        }],
+        xAxes: [{
+          gridLines: {
+            color: '#fbfbfb',
+            lineWidth: 2
+          }
+        }]
+      },
+    }
+  });
 
-	gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
-	gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
-	gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
-	new Chart(ctx1, {
-		type: "line",
-		data: {
-			labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-			datasets: [{
-				label: "Mobile apps",
-				tension: 0.4,
-				borderWidth: 0,
-				pointRadius: 0,
-				borderColor: "#5e72e4",
-				backgroundColor: gradientStroke1,
-				borderWidth: 3,
-				fill: true,
-				data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-				maxBarThickness: 6
+  $('#visitorMap').vectorMap({
+    map: 'world_en',
+    backgroundColor: '#ffffff',
+    borderColor: '#f2f2f2',
+    borderOpacity: .8,
+    borderWidth: 1,
+    hoverColor: '#000',
+    hoverOpacity: .8,
+    color: '#ddd',
+    normalizeFunction: 'linear',
+    selectedRegions: false,
+    showTooltip: true,
+    pins: {
+      id: '<div class="jqvmap-circle"></div>',
+      my: '<div class="jqvmap-circle"></div>',
+      th: '<div class="jqvmap-circle"></div>',
+      sy: '<div class="jqvmap-circle"></div>',
+      eg: '<div class="jqvmap-circle"></div>',
+      ae: '<div class="jqvmap-circle"></div>',
+      nz: '<div class="jqvmap-circle"></div>',
+      tl: '<div class="jqvmap-circle"></div>',
+      ng: '<div class="jqvmap-circle"></div>',
+      si: '<div class="jqvmap-circle"></div>',
+      pa: '<div class="jqvmap-circle"></div>',
+      au: '<div class="jqvmap-circle"></div>',
+      ca: '<div class="jqvmap-circle"></div>',
+      tr: '<div class="jqvmap-circle"></div>',
+    },
+  });
 
-			}],
-		},
-		options: {
-			responsive: true,
-			maintainAspectRatio: false,
-			plugins: {
-				legend: {
-					display: false,
-				}
-			},
-			interaction: {
-				intersect: false,
-				mode: 'index',
-			},
-			scales: {
-				y: {
-					grid: {
-						drawBorder: false,
-						display: true,
-						drawOnChartArea: true,
-						drawTicks: false,
-						borderDash: [5, 5]
-					},
-					ticks: {
-						display: true,
-						padding: 10,
-						color: '#fbfbfb',
-						font: {
-							size: 11,
-							family: "Open Sans",
-							style: 'normal',
-							lineHeight: 2
-						},
-					}
-				},
-				x: {
-					grid: {
-						drawBorder: false,
-						display: false,
-						drawOnChartArea: false,
-						drawTicks: false,
-						borderDash: [5, 5]
-					},
-					ticks: {
-						display: true,
-						color: '#ccc',
-						padding: 20,
-						font: {
-							size: 11,
-							family: "Open Sans",
-							style: 'normal',
-							lineHeight: 2
-						},
-					}
-				},
-			},
-		},
-	});
-</script> -->
+  // weather
+  getWeather();
+  setInterval(getWeather, 600000);
+
+  function getWeather() {
+    $.simpleWeather({
+      location: 'Bogor, Indonesia',
+      unit: 'c',
+      success: function(weather) {
+        var html = '';
+        html += '<div class="weather">';
+        html += '<div class="weather-icon text-primary"><span class="wi wi-yahoo-' + weather.code + '"></span></div>';
+        html += '<div class="weather-desc">';
+        html += '<h4>' + weather.temp + '&deg;' + weather.units.temp + '</h4>';
+        html += '<div class="weather-text">' + weather.currently + '</div>';
+        html += '<ul><li>' + weather.city + ', ' + weather.region + '</li>';
+        html += '<li> <i class="wi wi-strong-wind"></i> ' + weather.wind.speed + ' ' + weather.units.speed + '</li></ul>';
+        html += '</div>';
+        html += '</div>';
+
+        $("#myWeather").html(html);
+      },
+      error: function(error) {
+        $("#myWeather").html('<div class="alert alert-danger">' + error + '</div>');
+      }
+    });
+  }
+</script>
