@@ -1,21 +1,17 @@
-<footer class="footer pt-3  ">
-    <div class="container-fluid">
-        <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-12 mb-lg-0 mb-4">
-                <div class="copyright text-center text-sm text-muted text-lg-start">
-                    © <script>
-                        document.write(new Date().getFullYear())
-                    </script>
-                    Crochet by Mniratch | ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์
-                </div>
-            </div>
+<footer class="main-footer">
+    <div class="footer-left">
+        &copy; <script>document.write(new Date().getFullYear())</script>
+        Crochet by Mniratch | ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์
+    </div>
+    <div class="footer-right">
 
-        </div>
     </div>
 </footer>
 </div>
-</main>
 </div>
+</body>
+
+</html>
 
 <script>
     function perloader() {
