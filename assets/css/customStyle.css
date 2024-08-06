@@ -1,3 +1,9 @@
+:root {
+    --primary-color: #FFB1B1;
+    --secondary-color: #FFCBCB;
+}
+
+
 @font-face {
     font-family: 'IBMPlexSansThai';
     src: url(../fonts/IBMPlexSansThai/IBMPlexSansThai-Medium.ttf);

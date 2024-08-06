@@ -1,5 +1,6 @@
 :root {
 	--primary-color: #6777ef;
+	--pink-color: #FFB1B1;
 }
 
 @font-face {
@@ -46,11 +47,11 @@ body {
 }
 
 .text-pink {
-	color: var(--primary-color) !important;
+	color: var(--pink-color) !important;
 }
 
 .card.card-pink {
-	border-top: 2px solid var(--primary-color);
+	border-top: 2px solid var(--pink-color);
 }
 
 .bootstrap-tagsinput .tag [data-role="remove"]:hover {
@@ -96,3 +97,8 @@ body {
     height: 31px;
     padding: .25rem .5rem;
 }
+
+.gap-5 {
+	gap: 5px;
+}
+

@@ -190,11 +190,11 @@ define('LINK', base_url() . 'admin/');
             </div>
           </li> -->
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-              <img alt="image" src="<?= ASSETS_PATH ?>img/avatar/avatar-1.png" class="rounded-circle mr-1">
+              <img alt="image" src="<?= ASSETS_PATH ?>images/logo/favicon.ico" class="rounded-circle mr-1">
               <div class="d-sm-none d-lg-inline-block">ผู้ดูแลระบบ</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Logged in 5 min ago</div>
+              <!-- <div class="dropdown-title">Logged in 5 min ago</div> -->
               <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>

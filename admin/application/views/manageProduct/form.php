@@ -1,8 +1,4 @@
 <style>
-    .gap-15 {
-        gap: 10px;
-    }
-
     .previewImage {
         max-width: 200px;
         display: none;
@@ -30,7 +26,7 @@
                     <h4><?= $titlePageAction ?></h4>
                 </div>
                 <div class="card-body">
-                    <div class="row gap-15">
+                    <div class="row gap-5">
 
                         <?php if (!empty(validation_errors())) : ?>
                             <div class="col-12">
@@ -96,8 +92,12 @@
                 </div>
                 <div class="card-footer">
                     <div class="text-center">
-                        <a class="btn btn-secondary" href="<?= $action_link ?>" data-toggle="tooltip" title="ยกเลิก">ยกเลิก</a>
-                        <button type="submit" class="btn btn-success" data-toggle="tooltip" title="บันทึก">บันทึก</button>
+                        <a class="btn btn-warning" href="<?= $action_link ?>" data-toggle="tooltip" title="ยกเลิก">
+                            <i class="fas fa-times"></i>&nbsp;&nbsp;ยกเลิก
+                        </a>
+                        <button type="submit" class="btn btn-success" data-toggle="tooltip" title="บันทึก">
+                            <i class="fas fa-save"></i>&nbsp;&nbsp;บันทึก
+                        </button>
                     </div>
                 </div>
             </div>
