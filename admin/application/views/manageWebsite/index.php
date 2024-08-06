@@ -22,61 +22,58 @@
         <form action="<?= $action_link ?>save/" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
             <div class="card">
                 <div class="card-header">
-                    <h4>แบนเนอร์</h4>
+                    <h4><?= $titlePage ?></h4>
                 </div>
                 <div class="card-body">
-                    <div class="row gap-5">
 
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="banner_title" class="form-label">หัวเรื่อง <span class="text-danger">*</span></label>
-                                <input type="text" name="banner_title" class="form-control" id="banner_title" placeholder="หัวเรื่อง" required autocomplete="off">
-                                <div class="invalid-feedback">
-                                    กรุณาระบุชื่อหัวเรื่อง
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-4">
+                            <ul class="nav nav-pills flex-column" id="myTab4" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="banner-tab" data-toggle="tab" href="#banner-pane" role="tab">แบนเนอร์</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="total-tab" data-toggle="tab" href="#total-pane" role="tab">ยอดรวมสั่งซื้อ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact-pane" role="tab">ติดต่อ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="social-tab" data-toggle="tab" href="#social-pane" role="tab">Social</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-8">
+                            <div class="tab-content no-padding" id="myTab2Content">
+                                <div class="tab-pane fade show active" id="banner-pane" role="tabpanel" aria-labelledby="banner-tab">
+                                    <?php $this->load->view('manageWebsite/components/banner'); ?>
+                                </div>
+                                <div class="tab-pane fade" id="total-pane" role="tabpanel" aria-labelledby="total-tab">
+                                    <?php $this->load->view('manageWebsite/components/total'); ?>
+                                </div>
+                                <div class="tab-pane fade" id="contact-pane" role="tabpanel" aria-labelledby="contact-tab">
+                                    <?php $this->load->view('manageWebsite/components/contact'); ?>
+                                </div>
+                                <div class="tab-pane fade" id="social-pane" role="tabpanel" aria-labelledby="social-tab">
+                                    <?php $this->load->view('manageWebsite/components/social'); ?>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="product_name" class="form-label">รายละเอียด <span class="text-danger">*</span></label>
-                                <textarea name="banner_detail" class="summernote" placeholder="รายละเอียด" required></textarea>
-                                <div class="invalid-feedback">
-                                    กรุณาระบุรายละเอียด
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="product_image">รูปภาพพื้นหลัง <span class="text-danger">*</span></label>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="product_image" id="customFile" accept="image/*" <?= !empty($results) && !empty($results['image_path']) ? '' : 'required' ?>>
-                                    <label class="custom-file-label" for="customFile"><?= !empty($results) && !empty($results['image_path']) ? $results['image_original_name'] : 'เลือกไฟล์' ?></label>
-                                    <div class="invalid-feedback pt-5px">
-                                        กรุณาอัพโหลดรูปภาพพื้นหลัง
-                                    </div>
-                                </div>
-
-                                <!-- <div class="previewImage text-center mt-2">
-                                    <img class="previewBash img-thumbnail" id="previewBash" src="<?= !empty($results) && !empty($results['image_path']) ? $results['image_path'] : '' ?>">
-                                </div> -->
-                            </div>
-                        </div>
-
                     </div>
+
                 </div>
                 <div class="card-footer">
                     <div class="text-center">
-                        <a class="btn btn-warning" href="<?= $action_link ?>" data-toggle="tooltip" title="ยกเลิก">
+                        <!-- <a class="btn btn-warning" href="<?= $action_link ?>" data-toggle="tooltip" title="ยกเลิก">
                             <i class="fas fa-times"></i>&nbsp;&nbsp;ยกเลิก
-                        </a>
+                        </a> -->
                         <button type="submit" class="btn btn-success" data-toggle="tooltip" title="บันทึก">
                             <i class="fas fa-save"></i>&nbsp;&nbsp;บันทึก
                         </button>
                     </div>
                 </div>
             </div>
+
         </form>
     </div>
 </div>
