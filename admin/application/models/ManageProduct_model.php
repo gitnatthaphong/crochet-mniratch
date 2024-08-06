@@ -20,13 +20,17 @@ class ManageProduct_model extends CI_Model
         $dataUpdate = [
             'product_name' => $post['product_name'],
             'product_tags' => $post['product_tags'],
-            'image_original_name' => $file['name'],
             'status' => $post['status'],
         ];
 
+        // Upload File
         if(!empty($file) && !empty($file['name'])) {
-            @unlink($post['old_product_image']);
-            unset($post['old_product_image']);
+            $this->db->where('product_id', $id);
+            $data = $this->db->get($this->product_tbl)->row_array();
+
+            if(!empty($data) && file_exists($data['image_path'])) {
+                @unlink($data['image_path']);
+            }
 
             $explodeFile = explode('.',$file['full_path']);
             $ext = end($explodeFile);
@@ -34,6 +38,7 @@ class ManageProduct_model extends CI_Model
             
             move_uploaded_file($file['tmp_name'], $this->path . $newFilename);
 
+            $dataUpdate['image_original_name'] = $file['name'];
             $dataUpdate['image_path'] = $this->path . $newFilename;
             $dataUpdate['image_name'] = $newFilename;
         }
@@ -65,13 +70,8 @@ class ManageProduct_model extends CI_Model
         $this->db->insert($this->product_tbl, $dataInsert);
     }
 
-    public function getData($page = 1)
+    public function getData()
     {
-        $this->fnc_searchQuery();
-        $offset = $this->fnc_calPageOffset($page);
-
-        $this->db->offset($offset);
-        $this->db->limit($this->per_page);
         $this->db->order_by('create_date', 'desc');
         $data = $this->db->get($this->product_tbl)->result_array();
         
@@ -85,33 +85,32 @@ class ManageProduct_model extends CI_Model
 
     public function getDataCount()
     {
-        $this->fnc_searchQuery();
         $count = 0;
         $count = $this->db->count_all_results($this->product_tbl);
         return $count;
     }
 
-    private function fnc_searchQuery()
-    {
-        $post = $this->input->post();
+    // private function fnc_searchQuery()
+    // {
+    //     $post = $this->input->post();
         
-        if(!empty($post)) {
-            if(empty($post['reset'])) {
-                $product_name = str_replace(' ', '', strtolower(trim($post['product_name'])));
-                $this->db->like("LOWER(REPLACE(product_name, ' ', ''))", $product_name);
+    //     if(!empty($post)) {
+    //         if(empty($post['reset'])) {
+    //             $product_name = str_replace(' ', '', strtolower(trim($post['product_name'])));
+    //             $this->db->like("LOWER(REPLACE(product_name, ' ', ''))", $product_name);
     
-                $status = $post['status'];
-                if($status != 'all') {
-                    $this->db->where('status', $status);
-                }
-            }
-        }
-    }
+    //             $status = $post['status'];
+    //             if($status != 'all') {
+    //                 $this->db->where('status', $status);
+    //             }
+    //         }
+    //     }
+    // }
 
-    private function fnc_calPageOffset($page)
-    {
-        return ($page - 1) * $this->per_page;
-    }
+    // private function fnc_calPageOffset($page)
+    // {
+    //     return ($page - 1) * $this->per_page;
+    // }
 
 
     public function getDetail($id)

@@ -1,10 +1,15 @@
 <style>
     .gap-15 {
-        gap: 15px;
+        gap: 10px;
     }
 
     .previewImage {
         max-width: 200px;
+        display: none;
+    }
+
+    .pt-5px {
+        padding-top: 5px;
     }
 </style>
 
@@ -37,10 +42,12 @@
 
 
                         <div class="col-12">
-                            <label for="product_name" class="form-label">ชื่อสินค้า <span class="text-danger">*</span></label>
-                            <input type="text" name="product_name" value="<?= !empty($results) ? $results['product_name'] : '' ?>" class="form-control" id="product_name" placeholder="ชื่อสินค้า" required>
-                            <div class="invalid-feedback">
-                                กรุณาระบุชื่อสินค้า
+                            <div class="form-group">
+                                <label for="product_name" class="form-label">ชื่อสินค้า <span class="text-danger">*</span></label>
+                                <input type="text" name="product_name" value="<?= !empty($results) ? $results['product_name'] : '' ?>" class="form-control" id="product_name" placeholder="ชื่อสินค้า" required autocomplete="off">
+                                <div class="invalid-feedback">
+                                    กรุณาระบุชื่อสินค้า
+                                </div>
                             </div>
                         </div>
 
@@ -55,33 +62,34 @@
                         </div>
 
                         <div class="col-12">
-                            <label for="product_image" class="form-label">รูปภาพสินค้า <span class="text-danger">*</span></label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" name="product_image" id="customFile" accept="image/*" <?= !empty($results) && !empty($results['image_path']) ? '' : 'required' ?>>
-                                <label class="custom-file-label" for="customFile"><?= !empty($results) && !empty($results['image_path']) ? $results['image_original_name'] : 'เลือกไฟล์' ?></label>
-                            </div>
-                            <div class="previewImage text-center mt-2">
-                                <img class="previewBash img-thumbnail" id="previewBash" src="<?= !empty($results) && !empty($results['image_path']) ? $results['image_path'] : '' ?>">
-                                <?php if (!empty($results) && !empty($results['image_path'])) : ?>
-                                    <input type="hidden" name="old_product_image" value="<?= $results['image_path'] ?>">
-                                <?php endif ?>
-                            </div>
+                            <div class="form-group">
+                                <label for="product_image">รูปภาพสินค้า <span class="text-danger">*</span></label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="product_image" id="customFile" accept="image/*" <?= !empty($results) && !empty($results['image_path']) ? '' : 'required' ?>>
+                                    <label class="custom-file-label" for="customFile"><?= !empty($results) && !empty($results['image_path']) ? $results['image_original_name'] : 'เลือกไฟล์' ?></label>
+                                    <div class="invalid-feedback pt-5px">
+                                        กรุณาอัพโหลดรูปภาพสินค้า
+                                    </div>
+                                </div>
 
-                            <div class="invalid-feedback">
-                                กรุณาอัพโหลดรูปภาพสินค้า
+                                <div class="previewImage text-center mt-2">
+                                    <img class="previewBash img-thumbnail" id="previewBash" src="<?= !empty($results) && !empty($results['image_path']) ? $results['image_path'] : '' ?>">
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-12">
-                            <label for="status">สถานะ <span class="text-danger">*</span></label>
-                            <br>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadio1" name="status" value="1" class="custom-control-input" <?= (!empty($results) && $results['status'] == 1) || $id == 0 ? 'checked' : '' ?>>
-                                <label class="custom-control-label" for="customRadio1">เผยแพร่</label>
-                            </div>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadio2" name="status" value="0" class="custom-control-input" <?= !empty($results) && $results['status'] == 0 ? 'checked' : '' ?>>
-                                <label class="custom-control-label" for="customRadio2">ไม่เผยแพร่</label>
+                            <div class="form-group">
+                                <label for="status">สถานะ <span class="text-danger">*</span></label>
+                                <br>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadio1" name="status" value="1" class="custom-control-input" <?= (!empty($results) && $results['status'] == 1) || $id == 0 ? 'checked' : '' ?>>
+                                    <label class="custom-control-label" for="customRadio1">เผยแพร่</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="customRadio2" name="status" value="0" class="custom-control-input" <?= !empty($results) && $results['status'] == 0 ? 'checked' : '' ?>>
+                                    <label class="custom-control-label" for="customRadio2">ไม่เผยแพร่</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -99,7 +107,19 @@
 
 <script>
     $(document).ready(function() {
-        $(".input-tags").tagsinput('items');
+        $(".input-tags").tagsinput({
+            confirmKeys: [13]
+        });
+
+        $('.bootstrap-tagsinput input').on("keydown", function(e) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                if (e.target.value > '') {
+                    $(".input-tags").tagsinput('add', e.target.value);
+                    $(this).val('');
+                }
+            }
+        })
 
         <?php if (!empty($results) && !empty($results['image_path'])) : ?>
             $('.previewImage').fadeIn();
