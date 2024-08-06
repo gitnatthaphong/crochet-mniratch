@@ -54,6 +54,8 @@ define('LINK', base_url() . 'admin/');
   <link rel="stylesheet" href="<?= ASSETS_PATH ?>modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= ASSETS_PATH ?>modules/chocolat/dist/css/chocolat.css">
 
+  <link rel="stylesheet" href="<?= ASSETS_PATH ?>modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+
 
 
   <!-- Template CSS -->
@@ -91,6 +93,8 @@ define('LINK', base_url() . 'admin/');
   <script src="<?= ASSETS_PATH ?>modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
   <script src="<?= ASSETS_PATH ?>modules/select2/dist/js/select2.full.min.js"></script>
   <script src="<?= ASSETS_PATH ?>modules/jquery-selectric/jquery.selectric.min.js"></script>
+
+  <script src="<?= ASSETS_PATH ?>modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 
 
   <!-- Template JS File -->
@@ -225,6 +229,20 @@ define('LINK', base_url() . 'admin/');
               <a href="<?= LINK ?>ManageProduct" class="nav-link">
                 <i class="fas fa-shopping-cart"></i>
                 <span>จัดการสินค้า</span>
+              </a>
+            </li>
+           
+            <li class="dropdown <?= strtolower($this->cur_class) == 'managewebsite' ? 'active' : '' ?>">
+              <a href="<?= LINK ?>ManageWebsite" class="nav-link">
+                <i class="fas fa-globe-asia"></i>
+                <span>จัดการหน้าเว็บไซต์</span>
+              </a>
+            </li>
+            
+            <li class="dropdown <?= strtolower($this->cur_class) == 'managecategory' ? 'active' : '' ?>">
+              <a href="<?= LINK ?>ManageCategory" class="nav-link">
+                <i class="fas fa-th-large"></i>
+                <span>จัดการหมวดหมู่</span>
               </a>
             </li>
 

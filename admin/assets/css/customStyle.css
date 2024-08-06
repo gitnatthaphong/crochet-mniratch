@@ -1,6 +1,5 @@
 :root {
-    --primary-color: #FFB1B1;
-    --secondary-color: #FFCBCB;
+    --primary-color: #6777ef;
 }
 
 @font-face {
@@ -37,7 +36,7 @@
 }
 
 @keyframes l1 {
-    100% {box-shadow: 0 0 0 30px #0000}
+    100% {box-shadow: 0 0 0 20px #0000}
 }
 
 body {
@@ -50,4 +49,8 @@ body {
 
 .card.card-pink {
     border-top: 2px solid var(--primary-color); 
+}
+
+.bootstrap-tagsinput .tag [data-role="remove"]:hover {
+    box-shadow: none;
 }

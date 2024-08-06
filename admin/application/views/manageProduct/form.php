@@ -19,7 +19,7 @@
 
 <div class="row">
     <div class="col-12">
-        <form action="<?= $action_link ?>save/<?= $id ?>" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <form action="<?= $action_link ?>save/<?= $id ?>" method="post" enctype="multipart/form-data" class="needs-validation" id="myForm" novalidate>
             <div class="card">
                 <div class="card-header">
                     <h4><?= $titlePageAction ?></h4>
@@ -101,14 +101,7 @@
     $(document).ready(function() {
         $(".input-tags").tagsinput('items');
 
-        $(".input-tags").on('keydown', function(event) {
-            if (event.which == 13) {
-                event.preventDefault();
-                return false;
-            }
-        })
-
-        <?php if(!empty($results) && !empty($results['image_path'])) : ?>
+        <?php if (!empty($results) && !empty($results['image_path'])) : ?>
             $('.previewImage').fadeIn();
         <?php endif; ?>
 
