@@ -65,7 +65,7 @@ class Tools extends MY_Controller
 			];
 			$dataInsert[] = [
 				'field_name' => 'total_shop',
-				'field_value' => '2000'
+				'field_value' => null
 			];
 			$dataInsert[] = [
 				'field_name' => 'contact_title',

@@ -88,7 +88,7 @@ class ManageWebSite_model extends CI_Model
         ];
         $dataUpdate[] = [
             'field_name' => 'total_shop',
-            'field_value' => '2000'
+            'field_value' => 0
         ];
         $dataUpdate[] = [
             'field_name' => 'contact_title',
