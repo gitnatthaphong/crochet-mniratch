@@ -14,6 +14,7 @@ class ManageWebSite extends MY_Controller
 	{
 		$data['titlePage'] = 'จัดการหน้าเว็บไซต์';
 		$data['results'] = $this->model->getData();
+		$data['errorField'] = $this->model->getTextError();
 		parent::view('manageWebsite/index', $data);
 	}
 

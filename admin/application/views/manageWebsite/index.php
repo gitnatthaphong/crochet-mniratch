@@ -7,6 +7,10 @@
     .pt-5px {
         padding-top: 5px;
     }
+
+    .modal-backdrop.fade.show {
+        display: none;
+    }
 </style>
 
 <div class="section-header">
@@ -19,7 +23,7 @@
 
 <div class="row">
     <div class="col-12">
-        <form action="<?= $action_link ?>save/" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <form action="<?= $action_link ?>save/" method="post" enctype="multipart/form-data" id="myForm" class="needs-validation" novalidate>
             <div class="card">
                 <div class="card-header">
                     <h4><?= $titlePage ?></h4>
@@ -67,7 +71,7 @@
                         <a class="btn btn-warning" href="<?= $action_link ?>/reset" onclick="return confirm('คุณต้องการคืนค่าเริ่มต้นใช่หรือไม่ ?')" data-toggle="tooltip" title="คืนค่าเริ่มต้น">
                             <i class="fas fa-sync-alt"></i>&nbsp;&nbsp;คืนค่าเริ่มต้น
                         </a>
-                        <button type="submit" class="btn btn-success" data-toggle="tooltip" title="บันทึก">
+                        <button type="button" onclick="validateShowModal()" class="btn btn-success" data-toggle="tooltip" title="บันทึก">
                             <i class="fas fa-save"></i>&nbsp;&nbsp;บันทึก
                         </button>
                     </div>
@@ -78,13 +82,44 @@
     </div>
 </div>
 
+<div class="modal fade customMyModal" tabindex="1" role="dialog" id="exampleModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger">กรุณากรอกข้อมูลให้ครบถ้วน</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-    $(".needs-validation").submit(function() {
-        var form = $(this);
-        if (form[0].checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
+    const validateShowModal = () => {
+        let error = [];
+        <?php if (!empty($results)) : ?>
+            <?php foreach ($results as $key => $value) : ?>
+
+                if ($("input[name='<?= $key ?>'").val() == '') {
+                    error.push('- <?= $errorField[$key] ?>');
+                }
+            <?php endforeach; ?>
+        <?php endif; ?>
+
+        if (error.length > 0) {
+            $('#exampleModal').modal('show');
+            $('.customMyModal .modal-body').html(`${error.join('<br>')}`);
+            // $("#modal-1").fireModal({
+            //     title: '<span class="text-danger">กรุณากรอกฟอร์มให้ครบถ้วน</span>',
+            //     body: `${error.join('<br>')}`
+            // });
+            return false;
         }
-        form.addClass("was-validated");
-    });
+
+        $('#myForm').submit();
+    }
 </script>
