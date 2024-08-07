@@ -23,4 +23,10 @@ class ManageWebSite extends MY_Controller
 		redirect(base_url() . 'admin/ManageWebSite/');
 	}
 
+	public function reset()
+	{
+		$this->model->reset();
+		redirect(base_url() . 'admin/ManageWebSite/');
+	}
+
 }

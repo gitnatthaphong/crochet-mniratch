@@ -27,7 +27,7 @@
                 <div class="card-body">
 
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-4">
+                        <div class="col-12 col-sm-12 col-md-2">
                             <ul class="nav nav-pills flex-column" id="myTab4" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="banner-tab" data-toggle="tab" href="#banner-pane" role="tab">แบนเนอร์</a>
@@ -43,7 +43,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-8">
+                        <div class="col-12 col-sm-12 col-md-10">
                             <div class="tab-content no-padding" id="myTab2Content">
                                 <div class="tab-pane fade show active" id="banner-pane" role="tabpanel" aria-labelledby="banner-tab">
                                     <?php $this->load->view('manageWebsite/components/banner'); ?>
@@ -64,9 +64,9 @@
                 </div>
                 <div class="card-footer">
                     <div class="text-center">
-                        <!-- <a class="btn btn-warning" href="<?= $action_link ?>" data-toggle="tooltip" title="ยกเลิก">
-                            <i class="fas fa-times"></i>&nbsp;&nbsp;ยกเลิก
-                        </a> -->
+                        <a class="btn btn-warning" href="<?= $action_link ?>/reset" onclick="return confirm('คุณต้องการคืนค่าเริ่มต้นใช่หรือไม่ ?')" data-toggle="tooltip" title="คืนค่าเริ่มต้น">
+                            <i class="fas fa-sync-alt"></i>&nbsp;&nbsp;คืนค่าเริ่มต้น
+                        </a>
                         <button type="submit" class="btn btn-success" data-toggle="tooltip" title="บันทึก">
                             <i class="fas fa-save"></i>&nbsp;&nbsp;บันทึก
                         </button>
@@ -79,30 +79,12 @@
 </div>
 
 <script>
-    $(document).ready(function() {
-        $(".input-tags").tagsinput({
-            confirmKeys: [13]
-        });
-
-        $('.bootstrap-tagsinput input').on("keydown", function(e) {
-            if (event.keyCode == 13) {
-                event.preventDefault();
-                if (e.target.value > '') {
-                    $(".input-tags").tagsinput('add', e.target.value);
-                    $(this).val('');
-                }
-            }
-        })
-
-        <?php if (!empty($results) && !empty($results['image_path'])) : ?>
-            $('.previewImage').fadeIn();
-        <?php endif; ?>
-
-        $('#customFile').on('change', function(event) {
-            $('label[for="customFile"]').text(event.target.files[0].name);
-            $('.previewImage').fadeIn();
-            $('.previewBash').attr('src', URL.createObjectURL(event.target.files[0]));
-        })
-
+    $(".needs-validation").submit(function() {
+        var form = $(this);
+        if (form[0].checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.addClass("was-validated");
     });
 </script>

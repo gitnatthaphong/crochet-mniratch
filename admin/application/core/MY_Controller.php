@@ -19,12 +19,12 @@ class MY_Controller extends CI_Controller
     {
         if($this->cur_class != 'Login') {
             
-            $token = get_cookie('token');
+            $token = get_cookie('token_web_mniratch');
             if(empty($token)) {
                 redirect(base_url() . 'admin/Login');
             }
             
-            if(!empty($token) && !empty($this->session->userdata['token']) && $token != $this->session->userdata['token']) {
+            if(!empty($token) && !empty($this->session->userdata['token_web_mniratch']) && $token != $this->session->userdata['token_web_mniratch']) {
                 redirect(base_url() . 'admin/Login');
             }
             

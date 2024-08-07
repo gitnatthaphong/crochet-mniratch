@@ -84,6 +84,10 @@ class Tools extends MY_Controller
 				'field_value' => 'https://www.instagram.com/crochet_by_mniratch/'
 			];
 			$dataInsert[] = [
+				'field_name' => 'social_email',
+				'field_value' => null
+			];
+			$dataInsert[] = [
 				'field_name' => 'banner_image',
 				'field_value' => null
 			];

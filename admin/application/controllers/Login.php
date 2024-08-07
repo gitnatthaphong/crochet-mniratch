@@ -33,8 +33,8 @@ class Login extends MY_Controller
     {
         unset($this->session->userdata['username']);
         unset($this->session->userdata['password']);
-        unset($this->session->userdata['token']);
-        delete_cookie('token');
+        unset($this->session->userdata['token_web_mniratch']);
+        delete_cookie('token_web_mniratch');
 
         redirect(base_url());
     }
