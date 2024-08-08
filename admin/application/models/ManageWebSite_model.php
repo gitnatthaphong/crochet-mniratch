@@ -74,56 +74,69 @@ class ManageWebSite_model extends CI_Model
         return $this->path . $filename;
     }
 
-    public function reset()
+    public function reset($type)
     {
         $dataUpdate = [];
 
-        $dataUpdate[] = [
-            'field_name' => 'banner_title',
-            'field_value' => 'งานถักไหมพรมคอตตอนซอฟท์ที่ดีที่สุดในการทำ ตุ๊กตาและของตกแต่ง'
-        ];
-        $dataUpdate[] = [
-            'field_name' => 'banner_detail',
-            'field_value' => 'ค้นหาของขวัญสุดพิเศษได้ที่นี่ ไม่ว่าจะเนื่องในโอกาสสำคัญไหนๆ เราขอเป็นของขวัญอันล้ำค่าสำหรับคนพิเศษของคุณ'
-        ];
-        $dataUpdate[] = [
-            'field_name' => 'total_shop',
-            'field_value' => 0
-        ];
-        $dataUpdate[] = [
-            'field_name' => 'contact_title',
-            'field_value' => 'ติดตามข่าวสาร'
-        ];
-        $dataUpdate[] = [
-            'field_name' => 'contact_detail',
-            'field_value' => 'หากคุณต้องการติดตามข่าวสารหรือสอบถามการสั่งซื้อสินค้าได้ช่องทาง FaceBook และ Instragram ของเรา'
-        ];
-        $dataUpdate[] = [
-            'field_name' => 'social_facebook',
-            'field_value' => 'https://www.facebook.com/niratshoppingg/'
-        ];
-        $dataUpdate[] = [
-            'field_name' => 'social_instagram',
-            'field_value' => 'https://www.instagram.com/crochet_by_mniratch/'
-        ];
-        $dataUpdate[] = [
-            'field_name' => 'social_email',
-            'field_value' => null
-        ];
-        $dataUpdate[] = [
-            'field_name' => 'banner_image',
-            'field_value' => null
-        ];
-        $dataUpdate[] = [
-            'field_name' => 'bg_count',
-            'field_value' => null
-        ];
+        if ($type == 1) {
+            $dataUpdate[] = [
+                'field_name' => 'banner_title',
+                'field_value' => 'งานถักไหมพรมคอตตอนซอฟท์ที่ดีที่สุดในการทำ ตุ๊กตาและของตกแต่ง'
+            ];
+            $dataUpdate[] = [
+                'field_name' => 'banner_detail',
+                'field_value' => 'ค้นหาของขวัญสุดพิเศษได้ที่นี่ ไม่ว่าจะเนื่องในโอกาสสำคัญไหนๆ เราขอเป็นของขวัญอันล้ำค่าสำหรับคนพิเศษของคุณ'
+            ];
+
+            $dataUpdate[] = [
+                'field_name' => 'banner_image',
+                'field_value' => null
+            ];
+        }
+
+        if ($type == 2) {
+            $dataUpdate[] = [
+                'field_name' => 'total_shop',
+                'field_value' => 0
+            ];
+
+            $dataUpdate[] = [
+                'field_name' => 'bg_count',
+                'field_value' => null
+            ];
+        }
+
+        if ($type == 3) {
+            $dataUpdate[] = [
+                'field_name' => 'contact_title',
+                'field_value' => 'ติดตามข่าวสาร'
+            ];
+            $dataUpdate[] = [
+                'field_name' => 'contact_detail',
+                'field_value' => 'หากคุณต้องการติดตามข่าวสารหรือสอบถามการสั่งซื้อสินค้าได้ช่องทาง FaceBook และ Instragram ของเรา'
+            ];
+        }
+
+        if ($type == 4) {
+            $dataUpdate[] = [
+                'field_name' => 'social_facebook',
+                'field_value' => 'https://www.facebook.com/niratshoppingg/'
+            ];
+            $dataUpdate[] = [
+                'field_name' => 'social_instagram',
+                'field_value' => 'https://www.instagram.com/crochet_by_mniratch/'
+            ];
+            $dataUpdate[] = [
+                'field_name' => 'social_email',
+                'field_value' => null
+            ];
+        }
 
         $fieldFiles = ['bg_count', 'banner_image'];
 
-        foreach($dataUpdate as $key => $value) {
+        foreach ($dataUpdate as $key => $value) {
 
-            if(in_array($value['field_name'], $fieldFiles) && file_exists($value['field_value'])) {
+            if (in_array($value['field_name'], $fieldFiles) && file_exists($value['field_value'])) {
                 unset($value['field_value']);
             }
 

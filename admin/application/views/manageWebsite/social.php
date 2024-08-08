@@ -9,7 +9,7 @@
 
 <div class="row">
     <div class="col-12">
-        <form action="<?= $action_link ?>save/" method="post" enctype="multipart/form-data" id="myForm" class="needs-validation" novalidate>
+        <form action="<?= $action_link ?>save/4" method="post" class="needs-validation" novalidate>
             <div class="card">
                 <div class="card-header">
                     <h4><?= $titlePageAction ?></h4>
@@ -22,7 +22,7 @@
                                 <label for="social_email" class="form-label">Email <span class="text-danger">*</span></label>
                                 <input type="text" name="social_email" class="form-control" id="social_email" placeholder="Email" value="<?= $results['social_email'] ?>" required autocomplete="off">
                                 <div class="invalid-feedback">
-                                    Email
+                                    กรุณาระบุ Email
                                 </div>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                                 <label for="social_facebook" class="form-label">Facebook <span class="text-danger">*</span></label>
                                 <input type="text" name="social_facebook" class="form-control" id="social_facebook" placeholder="Facebook" value="<?= $results['social_facebook'] ?>" required autocomplete="off">
                                 <div class="invalid-feedback">
-                                    Facebook
+                                    กรุณาระบุ Facebook
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                                 <label for="social_instagram" class="form-label">Instagram <span class="text-danger">*</span></label>
                                 <input type="text" name="social_instagram" class="form-control" id="social_instagram" placeholder="Instagram" value="<?= $results['social_instagram'] ?>" required autocomplete="off">
                                 <div class="invalid-feedback">
-                                    Instagram
+                                    กรุณาระบุ Instagram
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="text-center">
-                        <a class="btn btn-warning" href="<?= $action_link ?>/reset" onclick="return confirm('คุณต้องการคืนค่าเริ่มต้นใช่หรือไม่ ?')" data-toggle="tooltip" title="คืนค่าเริ่มต้น">
+                        <a class="btn btn-warning" href="<?= $action_link ?>reset/4" onclick="return confirm('คุณต้องการคืนค่าเริ่มต้นใช่หรือไม่ ?')" data-toggle="tooltip" title="คืนค่าเริ่มต้น">
                             <i class="fas fa-sync-alt"></i>&nbsp;&nbsp;คืนค่าเริ่มต้น
                         </a>
                         <button type="submit" class="btn btn-success" data-toggle="tooltip" title="บันทึก">

@@ -25,7 +25,7 @@
 
 <div class="row">
     <div class="col-12">
-        <form action="<?= $action_link ?>save/" method="post" enctype="multipart/form-data" id="myForm" class="needs-validation" novalidate>
+        <form action="<?= $action_link ?>save/1" method="post" enctype="multipart/form-data" id="myForm" class="needs-validation" novalidate>
             <div class="card">
                 <div class="card-header">
                     <h4><?= $titlePageAction ?></h4>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="text-center">
-                        <a class="btn btn-warning" href="<?= $action_link ?>/reset" onclick="return confirm('คุณต้องการคืนค่าเริ่มต้นใช่หรือไม่ ?')" data-toggle="tooltip" title="คืนค่าเริ่มต้น">
+                        <a class="btn btn-warning" href="<?= $action_link ?>reset/1" onclick="return confirm('คุณต้องการคืนค่าเริ่มต้นใช่หรือไม่ ?')" data-toggle="tooltip" title="คืนค่าเริ่มต้น">
                             <i class="fas fa-sync-alt"></i>&nbsp;&nbsp;คืนค่าเริ่มต้น
                         </a>
                         <button type="submit" class="btn btn-success" data-toggle="tooltip" title="บันทึก">

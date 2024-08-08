@@ -45,17 +45,50 @@ class ManageWebSite extends MY_Controller
 	}
 
 
-	public function save()
+	public function save($type = FALSE)
 	{
 		$this->model->save();
-		redirect(base_url() . 'admin/ManageWebSite/');
+
+		$link = 'banner';
+		switch ($type) {
+			case 2:
+				$link = 'sales';
+				break;
+			case 3:
+				$link = 'contact';
+				break;
+			case 4:
+				$link = 'social';
+				break;
+			default:
+				$link = 'banner';
+				break;
+		}
+
+		redirect(base_url() . 'admin/ManageWebSite/' . $link);
 	}
 
-	public function reset()
+	public function reset($type = FALSE)
 	{
-		die('ss');
-		$this->model->reset();
-		redirect(base_url() . 'admin/ManageWebSite/');
+		$this->model->reset($type);
+
+		$link = 'banner';
+		switch ($type) {
+			case 2:
+				$link = 'sales';
+				break;
+			case 3:
+				$link = 'contact';
+				break;
+			case 4:
+				$link = 'social';
+				break;
+			default:
+				$link = 'banner';
+				break;
+		}
+
+		redirect(base_url() . 'admin/ManageWebSite/' . $link);
 	}
 
 }
