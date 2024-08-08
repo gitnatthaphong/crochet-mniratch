@@ -136,7 +136,7 @@ class ManageWebSite_model extends CI_Model
 
         foreach ($dataUpdate as $key => $value) {
 
-            if (in_array($value['field_name'], $fieldFiles) && file_exists($value['field_value'])) {
+            if (in_array($value['field_name'], $fieldFiles) &&  !empty($value['field_value']) && file_exists($value['field_value'])) {
                 unset($value['field_value']);
             }
 
