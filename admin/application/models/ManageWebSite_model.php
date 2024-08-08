@@ -133,21 +133,4 @@ class ManageWebSite_model extends CI_Model
 
         $this->db->close();
     }
-
-    public function getTextError()
-    {
-        $getData = [];
-        $getData['banner_title'] = '(แบนเนอร์) หัวเรื่อง';
-        $getData['banner_detail'] = '(แบนเนอร์) รายละเอียด';
-        $getData['banner_image'] = '(แบนเนอร์) รูปภาพพื้นหลัง';
-        $getData['total_shop'] = '(ยอดรวมสั่งซื้อ) ยอดสั่งซื้อ';
-        $getData['bg_count'] = '(ยอดรวมสั่งซื้อ) รูปภาพพื้นหลัง';
-        $getData['contact_title'] = '(ติดต่อ) หัวเรื่อง';
-        $getData['contact_detail'] = '(ติดต่อ) รายละเอียด';
-        $getData['social_facebook'] = '(Social) Facebook';
-        $getData['social_instagram'] = '(Social) Instagram';
-        $getData['social_email'] = '(Social) Email';
-
-        return $getData;
-    }
 }
