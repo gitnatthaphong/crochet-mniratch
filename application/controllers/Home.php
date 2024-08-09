@@ -36,4 +36,12 @@ class Home extends MY_Controller
         echo json_encode($data);
 		die();
 	}
+
+	public function getDataProduct()
+	{
+		$data = $this->defaultRespond;
+		$data['result'] = $this->model->getDataProduct();
+        echo json_encode($data);
+		die();
+	}
 }

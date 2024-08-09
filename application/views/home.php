@@ -127,7 +127,7 @@
                 <p>สิ้นค้าทั้งหมดนี้เป็นส่วนหนึ่งของสินค้าที่ขายแล้ว หากต้องการสินค้ารูปแบบใหม่หรือสั่งทำสามารถติดต่อร้านค้าได้ทางเพจ Facebook หรือ Instagram</p>
             </div><!--/.section-header-->
             <div class="explore-content">
-                <div class="row">
+                <div class="row" ng-if="!dataProducts.length > 0">
                     <div class=" col-md-4 col-sm-6">
                         <div class="single-explore-item">
                             <div class="single-explore-img">
@@ -259,6 +259,30 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row" ng-if="dataProducts.length > 0">
+                    <div class="col-md-4 col-sm-6" data-ng-repeat="(key, value) in dataProducts">
+                        <div class="single-explore-item">
+                            <div class="single-explore-img">
+                                <img ng-src="{{value.image_path}}" alt="{{value.product_name}}">
+                                <div class="single-explore-img-info">
+                                    <div class="flex" data-ng-if="value.product_tags.length > 0">
+                                        <button data-ng-repeat="tag in value.product_tags">{{tag}}</button>
+                                    </div>
+                                    <div class="single-explore-image-icon-box">
+                                        <ul>
+                                            <li>
+                                                <div class="single-explore-image-icon venobox" title="{{value.product_name}}" data-gall="gallery01" href="{{value.image_path}}">
+                                                    <i class="fa fa-arrows-alt"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -332,6 +356,7 @@
     myApp.controller('homeController', function($scope, $http, $timeout, $sce) {
         $scope.loading = true;
         $scope.dataSys = [];
+        $scope.dataProducts = [];
         $scope.sendMailSuccess = false;
 
         const initJquery = () => {
@@ -403,7 +428,38 @@
             );
         }
 
+        const getDataProduct = () => {
+            $scope.loading = true;
+            $http.post('<?= $action_link ?>getDataProduct').then(
+                function(res) {
+                    $scope.dataProducts = res.data.result;
+
+
+                    $timeout(function() {
+                        $scope.loading = false;
+                        fnc_initVenoBox();
+                    }, 1000);
+                }
+            );
+        }
+
+        const fnc_initVenoBox = () => {
+            $(document).ready(function() {
+                new VenoBox({
+                    selector: '.venobox',
+                    numeration: true,
+                    infinigall: true,
+                    spinner: 'pulse',
+                    fitView: true,
+                    ratio: '4x3',
+                    spinColor: '#FFB1B1',
+                    titlePosition: 'bottom'
+                });
+            });
+        }
+
         const init = () => {
+            getDataProduct();
             getDataSys();
             initJquery();
         }
@@ -412,7 +468,7 @@
     });
 </script>
 
-<script>
+<!-- <script>
     new VenoBox({
         selector: '.venobox',
         numeration: true,
@@ -423,4 +479,4 @@
         spinColor: '#FFB1B1',
         titlePosition: 'bottom'
     });
-</script>
+</script> -->
