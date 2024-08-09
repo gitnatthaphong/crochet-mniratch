@@ -39,6 +39,9 @@ define('ASSETS_PATH', APP_BASE_URL . 'assets/')
     <link rel="shortcut icon" type="image/icon" href="<?= ASSETS_PATH ?>logo/favicon.ico" />
     <link rel="apple-touch-icon" href="<?= ASSETS_PATH ?>logo/favicon.ico">
 
+    <!-- angular js -->
+    <script src="<?= ASSETS_PATH ?>js/angular.js"></script>
+
     <!--font-awesome.min.css-->
     <link rel="stylesheet" href="<?= ASSETS_PATH ?>css/font-awesome.min.css">
 

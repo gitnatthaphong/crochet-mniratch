@@ -57,7 +57,7 @@ class Tools extends MY_Controller
 
 			$dataInsert[] = [
 				'field_name' => 'banner_title',
-				'field_value' => 'งานถักไหมพรมคอตตอนซอฟท์ที่ดีที่สุดในการทำ ตุ๊กตาและของตกแต่ง'
+				'field_value' => '<h2>งานถักไหมพรมคอตตอนซอฟท์ที่ดีที่สุดในการทำ<br>ตุ๊กตาและของตกแต่ง</h2>'
 			];
 			$dataInsert[] = [
 				'field_name' => 'banner_detail',
@@ -98,6 +98,25 @@ class Tools extends MY_Controller
 			
 			$this->db->insert_batch('sys_config', $dataInsert);
 		}
+
+		$sql = "CREATE TABLE IF NOT EXISTS `topics` (
+			`topic_id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			`topic_name` varchar(255) NOT NULL,
+			`topic_icon` varchar(255) NOT NULL,
+			`topic_detail` TEXT DEFAULT NULL,
+			`create_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+		$this->db->query($sql);
+
+
+		$sql = "CREATE TABLE IF NOT EXISTS `message_user` (
+			`message_id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			`name` varchar(255) NOT NULL,
+			`email` varchar(255) NOT NULL,
+			`message` TEXT NOT NULL,
+			`create_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+		$this->db->query($sql);
 
 		die('Create Succsess');
 	}

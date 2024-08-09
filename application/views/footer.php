@@ -14,8 +14,14 @@
                 <div class="col-sm-6">
                     <div class="footer-social">
                         <!-- <span><i class="fa fa-phone"> +1  (222) 777 8888</i></span> -->
-                        <a href="https://www.facebook.com/niratshoppingg/" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/crochet_by_mniratch/"><i class="fa fa-instagram"></i></a>
+                        <?php if (!empty($dataSys['social_facebook'])) : ?>
+                            <a href="<?= $dataSys['social_facebook'] ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <?php endif; ?>
+
+                        <?php if (!empty($dataSys['social_instagram'])) : ?>
+                            <a href="<?= $dataSys['social_instagram'] ?>" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <?php endif; ?>
+
                         <!-- <a href="#"><i class="fa fa-twitter"></i></a>
 									<a href="#"><i class="fa fa-google-plus"></i></a> -->
                     </div>

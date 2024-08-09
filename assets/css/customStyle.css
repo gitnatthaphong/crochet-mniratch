@@ -194,3 +194,28 @@ a, a:hover, a:active, a:focus {
 .statistics .container {
     z-index: 1;
 }
+
+
+.btn-pink {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+.btn-pink:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.form-control::placeholder {
+    color: #ccc;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}

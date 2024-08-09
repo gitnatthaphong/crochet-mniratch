@@ -15,14 +15,25 @@ class Home extends MY_Controller
 	{
 		$data['counter'] = [
 			'countSite' => $this->model->getCountSite(),
-			'countSell' => 2200,
 		];
 
 		parent::view('home', $data);
 	}
 
-	public function sendMail()
+	public function sendMessage()
 	{
-		$post = $this->input->post();
+		$this->model->sendMessage();
+		
+		$data = $this->defaultRespond;
+        echo json_encode($data);
+		die();
+	}
+
+	public function getDataSys()
+	{
+		$data = $this->defaultRespond;
+		$data['result'] = $this->model->getDataSys();
+        echo json_encode($data);
+		die();
 	}
 }

@@ -36,7 +36,9 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="banner_title" class="form-label">หัวเรื่อง <span class="text-danger">*</span></label>
-                                <input type="text" name="banner_title" class="form-control" id="banner_title" value="<?= $results['banner_title'] ?>" placeholder="หัวเรื่อง" required autocomplete="off">
+                                <textarea name="banner_title" class="summernote" placeholder="หัวเรื่อง" required>
+                                    <?= $results['banner_title'] ?>
+                                </textarea>
                                 <div class="invalid-feedback">
                                     กรุณาระบุชื่อหัวเรื่อง
                                 </div>

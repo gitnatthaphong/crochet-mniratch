@@ -81,7 +81,7 @@ class ManageWebSite_model extends CI_Model
         if ($type == 1) {
             $dataUpdate[] = [
                 'field_name' => 'banner_title',
-                'field_value' => 'งานถักไหมพรมคอตตอนซอฟท์ที่ดีที่สุดในการทำ ตุ๊กตาและของตกแต่ง'
+                'field_value' => '<h2>งานถักไหมพรมคอตตอนซอฟท์ที่ดีที่สุดในการทำ<br>ตุ๊กตาและของตกแต่ง</h2>'
             ];
             $dataUpdate[] = [
                 'field_name' => 'banner_detail',
