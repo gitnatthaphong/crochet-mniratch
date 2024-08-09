@@ -16,21 +16,16 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4>รายการสินค้า</h4>
+                <h4><?= $titlePage ?></h4>
             </div>
             <div class="card-body">
-                <div class="text-right mb-3">
-                    <a href="<?= $action_link ?>form" class="btn btn-success" title="เพิ่มข้อมูล" data-toggle="tooltip">
-                        <i class="fas fa-plus"></i> เพิ่มข้อมูล
-                    </a>
-                </div>
                 <div class="table-responsive">
                     <table class="table table-striped" id="dataTable">
                         <thead>
                             <tr>
                                 <th class="text-center">ลำดับ</th>
-                                <th>รูปภาพสินค้า</th>
-                                <th>ชื่อสินค้า</th>
+                                <th>ชื่อ</th>
+                                <th>อีเมล</th>
                                 <th class="text-center">สถานะ</th>
                                 <th class="text-center">วันที่สร้าง</th>
                                 <th class="text-center"><i class="fas fa-cogs"></i></th>
@@ -44,28 +39,22 @@
                                             <?= $key + 1 ?>
                                         </td>
                                         <td>
-                                            <div class="gallery gallery-md">
-                                                <div class="gallery-item" data-image="<?= LINK . $value['image_path'] ?>" data-toggle="tooltip" title="ดูรูปภาพ" data-title="<?= $value['product_name'] ?>"></div>
-                                            </div>
+                                            <?= $value['name'] ?>
                                         </td>
                                         <td>
-                                            <?= $value['product_name'] ?>
+                                            <?= $value['email'] ?>
                                         </td>
                                         <td class="text-center">
-                                            <div class="badge badge-<?= $value['status'] == 1 ? 'success' : 'danger' ?>" data-toggle="tooltip" title="<?= $value['status'] == 1 ? 'เผยแพร่' : 'ไม่เผยแพร่' ?>">
-                                                <?= $value['status'] == 1 ? 'เผยแพร่' : 'ไม่เผยแพร่' ?>
+                                            <div class="badge badge-<?= $value['is_viewed'] == 1 ? 'success' : 'danger' ?>" data-toggle="tooltip" title="<?= $value['is_viewed'] == 1 ? 'อ่านแล้ว' : 'ยังไม่ได้เปิดอ่าน' ?>">
+                                                <?= $value['is_viewed'] == 1 ? 'อ่านแล้ว' : 'ยังไม่ได้เปิดอ่าน' ?>
                                             </div>
                                         </td>
                                         <td class="text-center">
                                             <?= dateTimeToDateThai($value['create_date']) ?>
                                         </td>
                                         <td class="text-center">
-                                            <a class="btn btn-warning" href="<?= $action_link ?>form/<?= $value['product_id'] ?>" data-toggle="tooltip" title="แก้ไขข้อมูล">
-                                                <i class="fas fa-edit"></i> แก้ไขข้อมูล
-                                            </a>
-
-                                            <a onclick="return confirm('คุณต้องการลบรายการนี้ใช่หรือไม่ ?')" class="btn btn-danger" data-toggle="tooltip" href="<?= $action_link ?>delete/<?= $value['product_id'] ?>" title="ลบข้อมูล">
-                                                <i class="fas fa-trash-alt"></i> ลบข้อมูล
+                                            <a class="btn btn-secondary" href="<?= $action_link ?>detail/<?= $value['message_id'] ?>" data-toggle="tooltip" title="ดูรายละเอียด">
+                                                <i class="fas fa-eye"></i> ดูรายละเอียด
                                             </a>
                                         </td>
                                     </tr>

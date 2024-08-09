@@ -114,6 +114,7 @@ class Tools extends MY_Controller
 			`name` varchar(255) NOT NULL,
 			`email` varchar(255) NOT NULL,
 			`message` TEXT NOT NULL,
+			`is_viewed` int DEFAULT 0,
 			`create_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 		$this->db->query($sql);

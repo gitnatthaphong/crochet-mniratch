@@ -225,6 +225,13 @@ define('LINK', base_url() . 'admin/');
               </a>
             </li>
 
+            <li class="dropdown  <?= strtolower($this->cur_class) == "managemessage" ? 'active' : '' ?>">
+              <a href="<?= LINK ?>ManageMessage" class="nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>กล่องข้อความ</span>
+              </a>
+            </li>
+
             <li class="dropdown  <?= strtolower($this->cur_class) == "manageproduct" ? 'active' : '' ?>">
               <a href="<?= LINK ?>ManageProduct" class="nav-link">
                 <i class="fas fa-shopping-cart"></i>
@@ -238,17 +245,12 @@ define('LINK', base_url() . 'admin/');
               </a>
               <ul class="dropdown-menu">
                 <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'banner'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/banner">แบนเนอร์</a></li>
+                <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'category'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/social">หมวดหมู่</a></li>
+                <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'about'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/social">เกี่ยวกับ</a></li>
                 <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'sales'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/sales">เนื้อหาการนับ</a></li>
                 <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'contact'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/contact">ติดต่อ</a></li>
                 <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'social'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/social">โซเชียล</a></li>
               </ul>
-            </li>
-
-            <li class="dropdown <?= strtolower($this->cur_class) == 'managecategory' ? 'active' : '' ?>">
-              <a href="<?= LINK ?>ManageCategory" class="nav-link">
-                <i class="fas fa-th-large"></i>
-                <span>จัดการหมวดหมู่</span>
-              </a>
             </li>
 
             <!-- <li class="dropdown active">
