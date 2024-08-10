@@ -34,18 +34,18 @@
 
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="topic_name" class="form-label">ชื่อหมวดหมู่ <span class="text-danger">*</span></label>
-                                <input type="text" name="topic_name" value="<?= !empty($results) ? $results['topic_name'] : '' ?>" class="form-control" id="topic_name" placeholder="ชื่อหมวดหมู่" required autocomplete="off">
+                                <label for="title" class="form-label">ชื่อรายการ <span class="text-danger">*</span></label>
+                                <input type="text" name="title" value="<?= !empty($results) ? $results['title'] : '' ?>" class="form-control" id="title" placeholder="ชื่อรายการ" required autocomplete="off">
                                 <div class="invalid-feedback">
-                                    กรุณาระบุชื่อหมวดหมู่
+                                    กรุณาระบุชื่อรายการ
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="topic_icon" class="form-label">Icon <span class="text-danger">* (สามารถเลือก Icon ได้ที่ <a href="https://fontawesome.com/v4/icons/" target="_blank">FontAwesome</a>)</span></label>
-                                <input type="text" name="topic_icon" value="<?= !empty($results) ? $results['topic_icon'] : '' ?>" class="form-control" id="topic_icon" placeholder="Icon" required autocomplete="off">
+                                <label for="icon" class="form-label">Icon <span class="text-danger">* (สามารถเลือก Icon ได้ที่ <a href="https://fontawesome.com/v4/icons/" target="_blank">FontAwesome</a>)</span></label>
+                                <input type="text" name="icon" value="<?= !empty($results) ? $results['icon'] : '' ?>" class="form-control" id="icon" placeholder="Icon" required autocomplete="off">
                                 <div class="invalid-feedback">
                                     กรุณาระบุ Icon
                                 </div>
@@ -54,28 +54,14 @@
 
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="topic_detail" class="form-label">รายละเอียด <span class="text-danger">*</span></label>
-                                <textarea class="summernote" name="topic_detail" id="topic_detail"><?= !empty($results) ? $results['topic_detail'] : '' ?></textarea>
+                                <label for="detail" class="form-label">รายละเอียด <span class="text-danger">*</span></label>
+                                <textarea class="summernote" name="detail" id="detail" required><?= !empty($results) ? $results['detail'] : '' ?></textarea>
                                 <div class="invalid-feedback">
                                     กรุณาระบุรายละเอียด
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="status">สถานะ <span class="text-danger">*</span></label>
-                                <br>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="customRadio1" name="status" value="1" class="custom-control-input" <?= (!empty($results) && $results['status'] == 1) || $id == 0 ? 'checked' : '' ?>>
-                                    <label class="custom-control-label" for="customRadio1">เผยแพร่</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="customRadio2" name="status" value="0" class="custom-control-input" <?= !empty($results) && $results['status'] == 0 ? 'checked' : '' ?>>
-                                    <label class="custom-control-label" for="customRadio2">ไม่เผยแพร่</label>
-                                </div>
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
                 <div class="card-footer">

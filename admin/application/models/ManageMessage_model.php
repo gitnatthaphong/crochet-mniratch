@@ -8,6 +8,7 @@ class ManageMessage_model extends CI_Model
 
     public function getData()
     {
+        $this->db->order_by('create_date', 'desc');
         $data = $this->db->get($this->message_user_tbl)->result_array();
         
         $getData = [];

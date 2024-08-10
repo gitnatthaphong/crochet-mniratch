@@ -150,7 +150,41 @@ class Tools extends MY_Controller
 			];
 			$this->db->insert('users', $dataInsert);
 		}
-		
+
+
+		$sql = "CREATE TABLE IF NOT EXISTS `about_content` (
+			`about_id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			`title` varchar(255) NOT NULL,
+			`detail` varchar(255) NOT NULL,
+			`icon` varchar(255) NOT NULL,
+			`create_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+		$this->db->query($sql);
+		$count = $this->db->count_all_results('about_content');
+		if($count != 3) {
+			$dataInsert = [];
+
+			$dataInsert[] = [
+				'title' => 'ทำไมถึงใช้ไหม คอตตอนซอฟท์',
+				'detail' => '<p>ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์ หรือที่นิยมเรียกกันว่า ไหมด้าย ขนาด 20 เป็นไหมที่มีคุณภาพ เหมาะแก่การถักงานให้แน่น เรียบ แต่มีความหรูอยู่ในตัวชิ้นงาน</p>',
+				'icon' => 'fa fa-lightbulb-o',
+			];
+
+
+			$dataInsert[] = [
+				'title' => 'การออกแบบสินค้า',
+				'detail' => '<p>มีการออกแบบการถักงานออกมาให้หลากหลาย ไม่ว่าจะตุ๊กตา ตัวเล็ก ตัวใหญ่ กระเป๋า ฯลฯ โดยการออกแบบจะเป็นตามเทรนที่กำลังมาแรงในวงการถักหรือสินค้าตามสไตล์ของลูกค้าเพื่อเป็นสินค้าสุด Special แบบไม่ซ้ำใครจากทางร้าน</p>',
+				'icon' => 'fa fa-lightbulb-o',
+			];
+
+			$dataInsert[] = [
+				'title' => 'การสั่งซื้อสินค้า',
+				'detail' => '<p>สามารถติดต่อได้ที่หน้าเพจ Facebook: <a href="https://www.facebook.com/niratshoppingg/" target="_blank" class="text-link">Crochet by Mniratch</a> งานทุกชิ้นเป็นงานฝีมือ ทำตามออเดอร์เป็นส่วนใหญ่ ดังนั้นสินค้าจะใช้ระยะเวลาในการทำ และมีระยะเวลาในการจัดส่งพอสมควร</p>',
+				'icon' => 'fa fa-lightbulb-o',
+			];
+
+			$this->db->insert_batch('about_content', $dataInsert);
+		}
 
 		die('Create Succsess');
 	}

@@ -242,7 +242,7 @@ define('LINK', base_url() . 'admin/');
             <li class="dropdown  <?= strtolower($this->cur_class) == "manageabout" ? 'active' : '' ?>">
               <a href="<?= LINK ?>ManageAbout" class="nav-link">
                 <i class="fas fa-address-card"></i>
-                <span>จัดการเกี่ยวกับ</span>
+                <span>จัดการเนื้อหาเกี่ยวกับ</span>
               </a>
             </li>
 
