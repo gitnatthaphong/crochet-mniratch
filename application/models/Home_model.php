@@ -39,7 +39,7 @@ class Home_model extends CI_Model
                 $getData[$value['field_name']] = $value['field_value'];
 
                 // data is files
-                if (in_array($value['field_name'], $fileImage)) {
+                if (in_array($value['field_name'], $fileImage) && !empty($value['field_value'])) {
                     if (file_exists($this->pathAdmin . $value['field_value'])) {
                         $getData[$value['field_name']] = base_url() . 'admin/' . $value['field_value'];
                     } else {

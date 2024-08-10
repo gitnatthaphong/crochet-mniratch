@@ -379,10 +379,32 @@ $(function () {
 		var gArrayFonts = ["IBMPlexSansThai"];
 
 		$(".summernote").summernote({
-      fontNames: gArrayFonts,
-      fontNamesIgnoreCheck: gArrayFonts,
+			fontNames: gArrayFonts,
+			fontNamesIgnoreCheck: gArrayFonts,
 			dialogsInBody: true,
 			minHeight: 250,
+			toolbar: [
+				["history", ["undo", "redo"]],
+				["style", ["style"]],
+				[
+					"font",
+					[
+						"bold",
+						"italic",
+						"underline",
+						"fontname",
+						"strikethrough",
+						"superscript",
+						"subscript",
+						"clear",
+					],
+				],
+				["color", ["forecolor", "backcolor", "color"]],
+				["paragraph", ["ul", "ol", "paragraph", "height"]],
+				["table", ["table"]],
+				["insert", ["link", "picture", "video"]],
+				["view", ["codeview"]],
+			],
 		});
 		$(".summernote-simple").summernote({
 			dialogsInBody: true,

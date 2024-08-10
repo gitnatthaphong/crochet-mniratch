@@ -65,7 +65,7 @@ class Tools extends MY_Controller
 			];
 			$dataInsert[] = [
 				'field_name' => 'total_shop',
-				'field_value' => null
+				'field_value' => 0
 			];
 			$dataInsert[] = [
 				'field_name' => 'contact_title',
@@ -94,6 +94,14 @@ class Tools extends MY_Controller
 			$dataInsert[] = [
 				'field_name' => 'bg_count',
 				'field_value' => null
+			];
+			$dataInsert[] = [
+				'field_name' => 'product_detail',
+				'field_value' => 'สิ้นค้าทั้งหมดนี้เป็นส่วนหนึ่งของสินค้าที่ขายแล้ว หากต้องการสินค้ารูปแบบใหม่หรือสั่งทำสามารถติดต่อร้านค้าได้ทางเพจ Facebook หรือ Instagram'
+			];
+			$dataInsert[] = [
+				'field_name' => 'about_detail',
+				'field_value' => '<p>เรียนรู้เพิ่มเติมเกี่ยวกับ Crochet by <span style="color: #FFB1B1;">Mniratch</span></p>'
 			];
 			
 			$this->db->insert_batch('sys_config', $dataInsert);

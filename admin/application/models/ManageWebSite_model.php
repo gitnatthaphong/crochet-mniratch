@@ -132,6 +132,20 @@ class ManageWebSite_model extends CI_Model
             ];
         }
 
+        if ($type == 5) {
+            $dataUpdate[] = [
+                'field_name' => 'about_detail',
+                'field_value' => '<p>เรียนรู้เพิ่มเติมเกี่ยวกับ Crochet by <span style="color: #FFB1B1;">Mniratch</span></p>'
+            ];
+        }
+
+        if ($type == 6) {
+            $dataUpdate[] = [
+				'field_name' => 'product_detail',
+				'field_value' => 'สิ้นค้าทั้งหมดนี้เป็นส่วนหนึ่งของสินค้าที่ขายแล้ว หากต้องการสินค้ารูปแบบใหม่หรือสั่งทำสามารถติดต่อร้านค้าได้ทางเพจ Facebook หรือ Instagram'
+			];
+        }
+
         $fieldFiles = ['bg_count', 'banner_image'];
 
         foreach ($dataUpdate as $key => $value) {

@@ -44,6 +44,24 @@ class ManageWebSite extends MY_Controller
 		parent::view('manageWebsite/social', $data);
 	}
 
+	
+	public function product()
+	{
+		$data['titlePage'] = 'จัดการหน้าเว็บไซต์';
+		$data['titlePageAction'] = 'สินค้า';
+		$data['results'] = $this->model->getData();
+		parent::view('manageWebsite/product', $data);
+	}
+
+	
+	public function about()
+	{
+		$data['titlePage'] = 'จัดการหน้าเว็บไซต์';
+		$data['titlePageAction'] = 'เกี่ยวกับ';
+		$data['results'] = $this->model->getData();
+		parent::view('manageWebsite/about', $data);
+	}
+
 
 	public function save($type = FALSE)
 	{
@@ -59,6 +77,12 @@ class ManageWebSite extends MY_Controller
 				break;
 			case 4:
 				$link = 'social';
+				break;
+			case 5:
+				$link = 'about';
+				break;
+			case 6:
+				$link = 'product';
 				break;
 			default:
 				$link = 'banner';
@@ -82,6 +106,12 @@ class ManageWebSite extends MY_Controller
 				break;
 			case 4:
 				$link = 'social';
+				break;
+			case 5:
+				$link = 'about';
+				break;
+			case 6:
+				$link = 'product';
 				break;
 			default:
 				$link = 'banner';

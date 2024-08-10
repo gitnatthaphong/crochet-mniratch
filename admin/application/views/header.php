@@ -253,7 +253,8 @@ define('LINK', base_url() . 'admin/');
               </a>
               <ul class="dropdown-menu">
                 <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'banner'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/banner">แบนเนอร์</a></li>
-                <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'about'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/social">เกี่ยวกับ</a></li>
+                <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'about'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/about">เกี่ยวกับ</a></li>
+                <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'product'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/product">สินค้า</a></li>
                 <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'sales'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/sales">เนื้อหาการนับ</a></li>
                 <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'contact'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/contact">ติดต่อ</a></li>
                 <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'social'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/social">โซเชียล</a></li>
