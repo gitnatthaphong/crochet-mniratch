@@ -101,3 +101,23 @@ body {
 .gap-5 {
 	gap: 5px;
 }
+
+.customMainContent .dropdown-list .dropdown-list-content {
+	height: unset;
+	max-height: 350px;
+	height: auto !important;
+}
+
+.customMainContent .dropdown-list .dropdown-list-content:not(.is-end):after {
+	height: 0;
+	display: none;
+}
+
+.customMainContent .dropdown-list .dropdown-footer {
+	padding: 5px;
+}
+
+.customMainContent .main-sidebar .sidebar-menu li a .badge {
+	width: unset;
+	margin-left: 3px;
+}

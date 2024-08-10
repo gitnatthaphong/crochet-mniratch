@@ -130,71 +130,43 @@ define('LINK', base_url() . 'admin/');
           </ul>
         </form>
         <ul class="navbar-nav navbar-right">
-          <!-- <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
+          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg <?= (!empty($notification)) ? 'beep' : '' ?>"><i class="far fa-bell"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Notifications
-                <div class="float-right">
+              <div class="dropdown-header">การแจ้งเตือน
+                <!-- <div class="float-right">
                   <a href="#">Mark All As Read</a>
+                </div> -->
+              </div>
+              <?php if (!empty($notification)) : ?>
+                <?php foreach ($notification as $key => $value) : ?>
+                  <div class="dropdown-list-content dropdown-list-icons">
+                    <a href="<?= LINK ?>manageMessage/detail/<?= $value['message_id'] ?>" class="dropdown-item">
+                      <div class="dropdown-item-icon bg-info text-white">
+                        <i class="far fa-user"></i>
+                      </div>
+                      <div class="dropdown-item-desc">
+                        <b><?= $value['name'] ?></b>
+                        <div class="time">เมื่อวันที่ <?= dateTimeToDateThai($value['create_date'], true) ?></div>
+                      </div>
+                    </a>
+                  </div>
+                <?php endforeach; ?>
+                <div class="dropdown-footer text-center">
+                  <a href="<?= LINK ?>manageMessage">ดูทั้งหมด <i class="fas fa-chevron-right"></i></a>
                 </div>
-              </div>
-              <div class="dropdown-list-content dropdown-list-icons">
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <div class="dropdown-item-icon bg-primary text-white">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    Template update is available now!
-                    <div class="time text-primary">2 Min Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-info text-white">
-                    <i class="far fa-user"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>You</b> and <b>Dedik Sugiharto</b> are now friends
-                    <div class="time">10 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-success text-white">
-                    <i class="fas fa-check"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    <b>Kusnaedi</b> has moved task <b>Fix bug header</b> to <b>Done</b>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-danger text-white">
-                    <i class="fas fa-exclamation-triangle"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    Low disk space. Let's clean it!
-                    <div class="time">17 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <div class="dropdown-item-icon bg-info text-white">
-                    <i class="fas fa-bell"></i>
-                  </div>
-                  <div class="dropdown-item-desc">
-                    Welcome to Stisla template!
-                    <div class="time">Yesterday</div>
-                  </div>
-                </a>
-              </div>
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
+              <?php else : ?>
+                <div class="dropdown-list-content">
+                  <span>- ไม่มีการแจ้งเตือน -</span>
+                </div>
+              <?php endif; ?>
+
             </div>
-          </li> -->
+          </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
               <img alt="image" src="<?= ASSETS_PATH ?>images/logo/favicon.ico" class="rounded-circle mr-1">
               <div class="d-sm-none d-lg-inline-block">ผู้ดูแลระบบ</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <!-- <div class="dropdown-title">Logged in 5 min ago</div> -->
               <a href="<?= LINK ?>UserProfile/form" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> แก้ไขข้อมูลผู้ใช้
               </a>
@@ -229,6 +201,9 @@ define('LINK', base_url() . 'admin/');
               <a href="<?= LINK ?>ManageMessage" class="nav-link">
                 <i class="fas fa-envelope"></i>
                 <span>กล่องข้อความ</span>
+                <?php if (!empty($notification)) : ?>
+                  <span class="badge badge-danger"><?= count($notification) ?></span>
+                <?php endif; ?>
               </a>
             </li>
 

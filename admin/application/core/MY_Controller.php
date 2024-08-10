@@ -6,6 +6,8 @@ class MY_Controller extends CI_Controller
     public $cur_class = null;
     public $cur_method = null;
 
+    private $message_user_tbl = 'message_user';
+
     public function __construct()
     {
         parent::__construct();
@@ -33,15 +35,24 @@ class MY_Controller extends CI_Controller
 
     }
 
-    protected function getPagination(&$data, $countData, $page = 1, $per_page = 10)
-	{
-        $data['startNo'] = ($page - 1) * $per_page + 1;
-		$data['allPage'] = ceil($countData / $per_page);
-		$data['currentPage'] = $page;
+    private function fnc_getNotification() 
+    {
+        $this->db->where('is_viewed', 0);
+        $this->db->limit(10);
+        $this->db->order_by('create_date', 'desc');
+        $data = $this->db->get($this->message_user_tbl)->result_array();
+        
+        if(!empty($data)) {
+            return $data;
+        } else {
+            return [];
+        }
+        
     }
 
     protected function view($views = null, $param = null)
     {
+        $param['notification'] = $this->fnc_getNotification();
         $param['cur_class'] = $this->cur_class;
         $param['cur_method'] = $this->cur_method;
         $param['action_link'] = base_url() . 'admin/' . $this->cur_class . '/';
