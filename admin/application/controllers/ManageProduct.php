@@ -14,8 +14,6 @@ class ManageProduct extends MY_Controller
 	{
 		$data['titlePage'] = 'จัดการสินค้า';
 		$data['results'] = $this->model->getData();
-		$data['count'] = $this->model->getDataCount();
-		$data['search'] = (empty($this->input->post()) || !empty($this->input->post('reset'))) ? [] : $this->input->post();
 		
 		parent::view('manageProduct/index', $data);
 	}

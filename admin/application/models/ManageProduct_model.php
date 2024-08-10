@@ -83,36 +83,6 @@ class ManageProduct_model extends CI_Model
         return $getData;
     }
 
-    public function getDataCount()
-    {
-        $count = 0;
-        $count = $this->db->count_all_results($this->product_tbl);
-        return $count;
-    }
-
-    // private function fnc_searchQuery()
-    // {
-    //     $post = $this->input->post();
-        
-    //     if(!empty($post)) {
-    //         if(empty($post['reset'])) {
-    //             $product_name = str_replace(' ', '', strtolower(trim($post['product_name'])));
-    //             $this->db->like("LOWER(REPLACE(product_name, ' ', ''))", $product_name);
-    
-    //             $status = $post['status'];
-    //             if($status != 'all') {
-    //                 $this->db->where('status', $status);
-    //             }
-    //         }
-    //     }
-    // }
-
-    // private function fnc_calPageOffset($page)
-    // {
-    //     return ($page - 1) * $this->per_page;
-    // }
-
-
     public function getDetail($id)
     {
         $this->db->where('product_id', $id);

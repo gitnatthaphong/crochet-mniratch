@@ -1,93 +1,114 @@
-<div class="container-fluid py-1 pb-4 px-3">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="<?= LINK ?>">หน้าหลัก</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page"><?= $titlePage ?></li>
-        </ol>
-        <h6 class="font-weight-bolder text-white mb-0"><?= $titlePage ?></h6>
-    </nav>
+<style>
+    tbody tr td {
+        vertical-align: middle !important;
+    }
+</style>
+
+<div class="section-header">
+    <h1><?= $titlePage ?></h1>
+    <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item"><a href="<?= LINK ?>">หน้าหลัก</a></div>
+        <div class="breadcrumb-item active"><?= $titlePage ?></div>
+    </div>
 </div>
 
-<div class="row mt-4">
-    <div class="col-lg-12 mb-lg-0 mb-4">
-        <div class="card customCard">
-            <div class="card-header pb-0 p-3">
-                <div class="row gap-2 mt-3 justify-content-center">
-                    <div class="col-12 col-sm-8">
-                        <input type="text" name="stext" class="form-control" id="stext" placeholder="ค้นหา">
-                    </div>
-                </div>
-
-                <div class="d-flex gap-2 mt-2 justify-content-center">
-                    <button type="button" class="btn btn-primary" title="ค้นหา">
-                        <i class="fa-solid fa-magnifying-glass"></i> ค้นหา
-                    </button>
-
-                    <button type="button" class="btn btn-outline-secondary" title="ล้างค่า">
-                        <i class="fa-solid fa-rotate"></i> ล้างค่า
-                    </button>
-                </div>
-
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>รายการหมวดหมู่</h4>
             </div>
-
-            <div class="container mt-3">
-                <div class="text-end">
-                    <a href="<?= $action_link ?>form" class="btn btn-success" title="เพิ่มข้อมูล">
-                        <i class="fa-solid fa-plus"></i> เพิ่มข้อมูล
+            <div class="card-body">
+                <div class="text-right mb-3">
+                    <a href="<?= $action_link ?>form" class="btn btn-success" title="เพิ่มข้อมูล" data-toggle="tooltip">
+                        <i class="fas fa-plus"></i> เพิ่มข้อมูล
                     </a>
                 </div>
-                <div class="table-responsive customTable">
-                    <table class="table align-items-center ">
+                <div class="table-responsive">
+                    <table class="table table-striped" id="dataTable">
                         <thead>
                             <tr>
-                                <td width="20" class="text-center">ลำดับ</td>
-                                <td>ชื่อสินค้า</td>
-                                <td class="text-center">สถานะ</td>
-                                <td class="text-center">วันที่สร้าง</td>
-                                <td class="text-center"><i class="fa-solid fa-gears"></i></td>
+                                <th class="text-center">ลำดับ</th>
+                                <th>ชื่อหมวดหมู่</th>
+                                <th class="text-center">สถานะ</th>
+                                <th class="text-center">วันที่สร้าง</th>
+                                <th class="text-center"><i class="fas fa-cogs"></i></th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php _print_r($ans); ?>
-                        <?php _print_r($ans); ?>
-                            <?php if(!empty($ans)) : ?>
-                                <?php foreach($ans as $key => $value) : ?>
+                            <?php if (!empty($results)) : ?>
+                                <?php foreach ($results as $key => $value) : ?>
                                     <tr>
                                         <td class="text-center">
-                                            <?= ($key + 1) ?>
+                                            <?= $key + 1 ?>
                                         </td>
                                         <td>
-                                            <?= $value['category_name'] ?>
+                                            <?= $value['topic_name'] ?>
                                         </td>
                                         <td class="text-center">
-                                            <span class="<?= $value['status'] == 1 ? 'text-success' : 'text-danger' ?>">
+                                            <div class="badge badge-<?= $value['status'] == 1 ? 'success' : 'danger' ?>" data-toggle="tooltip" title="<?= $value['status'] == 1 ? 'เผยแพร่' : 'ไม่เผยแพร่' ?>">
                                                 <?= $value['status'] == 1 ? 'เผยแพร่' : 'ไม่เผยแพร่' ?>
-                                            </span>
+                                            </div>
                                         </td>
                                         <td class="text-center">
-                                            <?= $value['create_date'] ?>
+                                            <?= dateTimeToDateThai($value['create_date']) ?>
                                         </td>
                                         <td class="text-center">
-                                            <a class="btn" href="<?= $action_link ?>form/<?= $value['product_id'] ?>">
-                                                <i class="fa-regular fa-pen-to-square"></i>
+                                            <a class="btn btn-warning" href="<?= $action_link ?>form/<?= $value['topic_id'] ?>" data-toggle="tooltip" title="แก้ไขข้อมูล">
+                                                <i class="fas fa-edit"></i> แก้ไขข้อมูล
                                             </a>
 
-                                            <a onclick="confirm('คุณต้องการลบรายการนี้ใช่หรือไม่ ?')" class="btn btn-danger" href="<?= $action_link ?>delete/<?= $value['product_id'] ?>">
-                                                <i class="fa-solid fa-trash-can"></i>
+                                            <a onclick="return confirm('คุณต้องการลบรายการนี้ใช่หรือไม่ ?')" class="btn btn-danger" data-toggle="tooltip" href="<?= $action_link ?>delete/<?= $value['topic_id'] ?>" title="ลบข้อมูล">
+                                                <i class="fas fa-trash-alt"></i> ลบข้อมูล
                                             </a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
-                            <?php else: ?>
+                            <?php else : ?>
                                 <tr>
-                                    <td colspan="4" class="text-center">- ไม่พบข้อมูล -</td>
+                                    <td colspan="6" class="text-center h-60">- ไม่พบข้อมูล -</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
+
+<script>
+    $("#dataTable").dataTable({
+        "language": {
+            "info": "ทั้งหมด _TOTAL_ รายการ",
+            "infoEmpty": "ทั้งหมด 0 รายการ",
+            "emptyTable": "- ไม่พบข้อมูล -",
+            "infoFiltered": "",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "แสดง _MENU_ รายการ",
+            "loadingRecords": "กำลังโหลด...",
+            "processing": "",
+            "search": "ค้นหา:",
+            "zeroRecords": "- ไม่พบข้อมูล -",
+            "paginate": {
+                "first": "หน้าแรก",
+                "last": "หน้าสุดท้าย",
+                "next": "ถัดไป",
+                "previous": "ก่อนหน้า"
+            },
+        },
+        // "ajax": {
+        //      url: '/api/myData',
+        //     dataSrc: 'staff'
+        // },
+        // "columns": [
+        //     { data: 'name' },
+        //     { data: 'hr.position' },
+        //     { data: 'hr.salary' },
+        //     { data: 'hr.state_date' },
+        //     { data: 'contact.office' },
+        //     { data: 'contact.extn' }
+        // ]
+    });
+</script>

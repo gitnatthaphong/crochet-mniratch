@@ -18,7 +18,7 @@ class Login_model extends CI_Model
                 $token = $this->fnc_getToken();
                 $this->session->userdata['token_web_mniratch'] = $token;
 
-                set_cookie("token_web_mniratch", $token, time()+3600); // 1 h
+                set_cookie("token_web_mniratch", $token, 60*60);
 
                 $access = true;
             }

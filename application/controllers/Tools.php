@@ -104,6 +104,7 @@ class Tools extends MY_Controller
 			`topic_name` varchar(255) NOT NULL,
 			`topic_icon` varchar(255) NOT NULL,
 			`topic_detail` TEXT DEFAULT NULL,
+			`status` int NOT NULL,
 			`create_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 		$this->db->query($sql);
