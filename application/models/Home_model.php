@@ -14,11 +14,11 @@ class Home_model extends CI_Model
 
     public function getCountSite()
     {
-        $this->db->where('id', 1);
+        $this->db->select('SUM(count) as sum');
         $data = $this->db->get($this->visits_tbl)->row_array();
 
         if (!empty($data)) {
-            return $data['count'];
+            return $data['sum'];
         } else {
             return [];
         }
@@ -26,7 +26,25 @@ class Home_model extends CI_Model
 
     public function updateCountSite()
     {
-        $this->db->query("UPDATE {$this->visits_tbl} SET count = count + 1 WHERE id = 1");
+        $this->db->where('MONTH(create_date)', date('m'));
+        $this->db->where('YEAR(create_date)', date('Y'));
+        $data = $this->db->get($this->visits_tbl)->row_array();
+    
+        if(!empty($data)) {
+            $dataUpdate = [
+                'count' => $data['count'] + 1
+            ];
+            $this->db->where('id', $data['id']);
+            $this->db->update($this->visits_tbl, $dataUpdate);
+            
+        } else {
+            $dataInsert = [
+                'page_url' => base_url(),
+                'count' => 1,
+            ];
+
+            $this->db->insert($this->visits_tbl, $dataInsert);
+        }
     }
 
     public function getDataSys()

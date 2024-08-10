@@ -8,7 +8,6 @@ class Home extends MY_Controller
 	{
 		parent::__construct();
 		$this->load->model('Home_model', 'model');
-		$this->model->updateCountSite();
 	}
 
 	public function index()
@@ -16,6 +15,8 @@ class Home extends MY_Controller
 		$data['counter'] = [
 			'countSite' => $this->model->getCountSite(),
 		];
+		
+		$this->model->updateCountSite();
 
 		parent::view('home', $data);
 	}

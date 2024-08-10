@@ -16,22 +16,11 @@ class Tools extends MY_Controller
 			`id` int(11) NOT NULL AUTO_INCREMENT,
 			`page_url` text NOT NULL,
 			`count` int(10) NOT NULL,
+			`create_date` DATE NULL DEFAULT CURRENT_TIMESTAMP,
 			PRIMARY KEY (`id`)
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 		$this->db->query($sql);
-
-
-		$this->db->where('page_url', base_url());
-		$count = $this->db->get('visits')->num_rows();
-
-		if($count == 0) {
-			$dataInsert = [
-				'page_url' => base_url(),
-				'count' => 0
-			];
-			
-			$this->db->insert('visits', $dataInsert);
-		}
+		
 
 		$sql = "CREATE TABLE IF NOT EXISTS `product` (
 				`product_id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
