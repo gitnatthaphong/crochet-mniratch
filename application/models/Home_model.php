@@ -7,6 +7,8 @@ class Home_model extends CI_Model
     private $sys_config_tbl = 'sys_config';
     private $message_user_tbl = 'message_user';
     private $product_tbl = 'product';
+    private $about_content_tbl = 'about_content';
+    private $topics_tbl = 'topics';
 
     private $pathAdmin = 'admin/';
 
@@ -92,6 +94,30 @@ class Home_model extends CI_Model
             $post['message'] = trim($post['message']);
 
             $this->db->insert($this->message_user_tbl, $post);
+        }
+    }
+
+    public function getDataAbout()
+    {
+        $this->db->order_by('about_id', 'asc');
+        $this->db->limit(3);
+        $data = $this->db->get($this->about_content_tbl)->result_array();
+        if(!empty($data)) {
+            return $data;
+        } else {
+            return [];
+        }
+    }
+
+    public function getDataCategory()
+    {
+        $this->db->order_by('create_date', 'desc');
+        $this->db->limit(5);
+        $data = $this->db->get($this->topics_tbl)->result_array();
+        if(!empty($data)) {
+            return $data;
+        } else {
+            return [];
         }
     }
 }

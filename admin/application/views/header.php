@@ -156,7 +156,12 @@ define('LINK', base_url() . 'admin/');
                 </div>
               <?php else : ?>
                 <div class="dropdown-list-content">
-                  <span>- ไม่มีการแจ้งเตือน -</span>
+                </div>
+
+                <div class="dropdown-list-content dropdown-list-icons">
+                  <a href="#" class="dropdown-item justify-content-center">
+                    <span>- ไม่มีการแจ้งเตือน -</span>
+                  </a>
                 </div>
               <?php endif; ?>
 

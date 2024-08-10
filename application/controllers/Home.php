@@ -44,4 +44,20 @@ class Home extends MY_Controller
         echo json_encode($data);
 		die();
 	}
+
+	public function getDataCategory()
+	{
+		$data = $this->defaultRespond;
+		$data['result'] = $this->model->getDataCategory();
+        echo json_encode($data);
+		die();
+	}
+
+	public function getDataAbout()
+	{
+		$data = $this->defaultRespond;
+		$data['result'] = $this->model->getDataAbout();
+        echo json_encode($data);
+		die();
+	}
 }

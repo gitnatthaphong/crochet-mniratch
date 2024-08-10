@@ -7,7 +7,7 @@ class ManageAbout_model extends CI_Model
 
     public function getData()
     {
-        $this->db->order_by('about_id', 'desc');
+        $this->db->order_by('about_id', 'asc');
         $data = $this->db->get($this->about_content_tbl)->result_array();
         
         if(!empty($data)) {
@@ -37,6 +37,7 @@ class ManageAbout_model extends CI_Model
             'title' => $post['title'],
             'detail' => $post['detail'],
             'icon' => $post['icon'],
+            'create_date' => date('Y-m-d h:i:s'),
         ];
 
         $this->db->where('about_id', $id);

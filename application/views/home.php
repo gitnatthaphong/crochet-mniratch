@@ -22,7 +22,7 @@
     <section id="list-topics" class="list-topics">
         <div class="container">
             <div class="list-topics-content">
-                <ul>
+                <ul ng-if="!dataCategory.length > 0">
                     <li>
                         <div class="single-list-topics-content">
                             <div class="single-list-topics-icon customIcon">
@@ -61,6 +61,18 @@
                         </div>
                     </li>
                 </ul>
+
+                <ul ng-if="dataCategory.length > 0">
+                    <li data-ng-repeat="(key, value) in dataCategory">
+                        <div class="single-list-topics-content">
+                            <div class="single-list-topics-icon customIcon">
+                                <i class="{{value.topic_icon}}" aria-hidden="true"></i>
+                            </div>
+                            <h2><a>{{value.topic_name}}</a></h2>
+                            <p ng-bind-html="value.topic_detail"></p>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -68,48 +80,21 @@
     <!--list-topics end-->
 
     <!--works start -->
-    <section id="works" class="works">
+    <section id="works" class="works" ng-if="dataAbout.length > 0">
         <div class="container">
             <div class="section-header">
                 <h2>เกี่ยวกับ</h2>
-                <p>เรียนรู้เพิ่มเติมเกี่ยวกับ Crochet by <span class="text-primary">Mniratch</span></p>
+                <p ng-bind-html="dataSys.about_detail"></p>
             </div>
             <div class="works-content">
                 <div class="row">
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-4 col-sm-6" data-ng-repeat="(key, value) in dataAbout">
                         <div class="single-how-works">
                             <div class="single-how-works-icon customIcon">
-                                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                                <i class="{{value.icon}}" aria-hidden="true"></i>
                             </div>
-                            <h2><a>ทำไมถึงใช้ไหม คอตตอนซอฟท์</a></h2>
-                            <p>
-                                ไหมพรม โครเชต์ งานถักจากไหมคอตตอนซอฟท์ หรือที่นิยมเรียกกันว่า ไหมด้าย ขนาด 20 เป็นไหมที่มีคุณภาพ เหมาะแก่การถักงานให้แน่น เรียบ แต่มีความหรูอยู่ในตัวชิ้นงาน
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-how-works">
-                            <div class="single-how-works-icon customIcon">
-                                <i class="fa fa-paint-brush" aria-hidden="true"></i>
-                            </div>
-                            <h2><a>การออกแบบสินค้า</a></h2>
-                            <p>
-                                มีการออกแบบการถักงานออกมาให้หลากหลาย ไม่ว่าจะตุ๊กตา ตัวเล็ก ตัวใหญ่ กระเป๋า ฯลฯ โดยการออกแบบจะเป็นตามเทรนที่กำลังมาแรงในวงการถักหรือสินค้าตามสไตล์ของลูกค้าเพื่อเป็นสินค้าสุด Special แบบไม่ซ้ำใครจากทางร้าน
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="single-how-works">
-                            <div class="single-how-works-icon customIcon">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            </div>
-                            <h2><a>การสั่งซื้อสินค้า</a></h2>
-                            <p>
-                                สามารถติดต่อได้ที่หน้าเพจ Facebook: <a href="https://www.facebook.com/niratshoppingg/" target="_blank" class="text-link">Crochet by Mniratch</a> งานทุกชิ้นเป็นงานฝีมือ ทำตามออเดอร์เป็นส่วนใหญ่ ดังนั้นสินค้าจะใช้ระยะเวลาในการทำ และมีระยะเวลาในการจัดส่งพอสมควร
-                            </p>
-                            <!-- <button class="welcome-hero-btn how-work-btn" onclick="window.location.href='#'">
-                            read more
-                        </button> -->
+                            <h2><a>{{value.title}}</a></h2>
+                            <p ng-bind-html="value.detail"></p>
                         </div>
                     </div>
                 </div>
@@ -124,7 +109,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>สินค้า</h2>
-                <p>สิ้นค้าทั้งหมดนี้เป็นส่วนหนึ่งของสินค้าที่ขายแล้ว หากต้องการสินค้ารูปแบบใหม่หรือสั่งทำสามารถติดต่อร้านค้าได้ทางเพจ Facebook หรือ Instagram</p>
+                <p ng-bind-html="dataSys.product_detail"></p>
             </div><!--/.section-header-->
             <div class="explore-content">
                 <div class="row" ng-if="!dataProducts.length > 0">
@@ -357,6 +342,8 @@
         $scope.loading = true;
         $scope.dataSys = [];
         $scope.dataProducts = [];
+        $scope.dataCategory = [];
+        $scope.dataAbout = [];
         $scope.sendMailSuccess = false;
 
         const initJquery = () => {
@@ -409,7 +396,7 @@
                     $scope.dataSys = res.data.result;
 
                     // HTML
-                    let passHtml = ['banner_title', 'banner_detail', 'contact_detail'];
+                    let passHtml = ['banner_title', 'banner_detail', 'contact_detail', 'about_detail', 'product_detail'];
                     passHtml.forEach(element => {
                         if ($scope.dataSys[element] && $scope.dataSys[element] > '') {
                             $scope.dataSys[element] = $sce.trustAsHtml($scope.dataSys[element]);
@@ -458,9 +445,55 @@
             });
         }
 
+        const getDataCategory = () => {
+            $scope.loading = true;
+            $http.post('<?= $action_link ?>getDataCategory').then(
+                function(res) {
+                    $scope.dataCategory = res.data.result;
+
+                    // HTML
+                    if ($scope.dataCategory.length > 0) {
+                        $scope.dataCategory.forEach((element, index) => {
+                            if ($scope.dataCategory[index]['topic_detail'] && $scope.dataCategory[index]['topic_detail'] > '') {
+                                $scope.dataCategory[index]['topic_detail'] = $sce.trustAsHtml($scope.dataCategory[index]['topic_detail']);
+                            }
+                        });
+                    }
+
+                    $timeout(function() {
+                        $scope.loading = false;
+                    }, 1000);
+                }
+            );
+        }
+
+        const getDataAbout = () => {
+            $scope.loading = true;
+            $http.post('<?= $action_link ?>getDataAbout').then(
+                function(res) {
+                    $scope.dataAbout = res.data.result;
+
+                    // HTML
+                    if ($scope.dataAbout.length > 0) {
+                        $scope.dataAbout.forEach((element, index) => {
+                            if ($scope.dataAbout[index]['detail'] && $scope.dataAbout[index]['detail'] > '') {
+                                $scope.dataAbout[index]['detail'] = $sce.trustAsHtml($scope.dataAbout[index]['detail']);
+                            }
+                        });
+                    }
+
+                    $timeout(function() {
+                        $scope.loading = false;
+                    }, 1000);
+                }
+            );
+        }
+
         const init = () => {
             getDataProduct();
             getDataSys();
+            getDataCategory();
+            getDataAbout();
             initJquery();
         }
 
