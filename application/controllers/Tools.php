@@ -128,6 +128,30 @@ class Tools extends MY_Controller
 		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 		$this->db->query($sql);
 
+		$sql = "CREATE TABLE IF NOT EXISTS `users` (
+			`user_id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			`username` varchar(255) NOT NULL,
+			`password` varchar(255) NOT NULL,
+			`fname` varchar(255) NOT NULL,
+			`lname` varchar(255) NOT NULL,
+			`email` varchar(255) DEFAULT NULL,
+			`is_active` int DEFAULT 1,
+			`create_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+		$this->db->query($sql);
+		$count = $this->db->count_all_results('users');
+		if($count == 0) {
+			$dataInsert = [
+				'username' => 'admin',
+				'password' => md5('may1234##'),
+				'fname' => 'ผู้ดูแลระบบ',
+				'lname' => 'Crochet by Mniratch',
+				'email' => 'admin@gmail.com',
+			];
+			$this->db->insert('users', $dataInsert);
+		}
+		
+
 		die('Create Succsess');
 	}
 }

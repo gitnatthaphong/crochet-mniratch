@@ -195,12 +195,12 @@ define('LINK', base_url() . 'admin/');
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <!-- <div class="dropdown-title">Logged in 5 min ago</div> -->
-              <a href="features-profile.html" class="dropdown-item has-icon">
-                <i class="far fa-user"></i> Profile
+              <a href="<?= LINK ?>UserProfile/form" class="dropdown-item has-icon">
+                <i class="far fa-user"></i> แก้ไขข้อมูลผู้ใช้
               </a>
               <div class="dropdown-divider"></div>
               <a href="<?= LINK ?>Login/logout" class="dropdown-item has-icon text-danger">
-                <i class="fas fa-sign-out-alt"></i> Logout
+                <i class="fas fa-sign-out-alt"></i> ออกจากระบบ
               </a>
             </div>
           </li>
@@ -232,13 +232,6 @@ define('LINK', base_url() . 'admin/');
               </a>
             </li>
 
-            <li class="dropdown  <?= strtolower($this->cur_class) == "manageproduct" ? 'active' : '' ?>">
-              <a href="<?= LINK ?>ManageProduct" class="nav-link">
-                <i class="fas fa-shopping-cart"></i>
-                <span>จัดการสินค้า</span>
-              </a>
-            </li>
-
             <li class="dropdown  <?= strtolower($this->cur_class) == "managecategory" ? 'active' : '' ?>">
               <a href="<?= LINK ?>ManageCategory" class="nav-link">
                 <i class="fas fa-th-large"></i>
@@ -246,6 +239,19 @@ define('LINK', base_url() . 'admin/');
               </a>
             </li>
 
+            <li class="dropdown  <?= strtolower($this->cur_class) == "manageabout" ? 'active' : '' ?>">
+              <a href="<?= LINK ?>ManageAbout" class="nav-link">
+                <i class="fas fa-address-card"></i>
+                <span>จัดการเกี่ยวกับ</span>
+              </a>
+            </li>
+
+            <li class="dropdown  <?= strtolower($this->cur_class) == "manageproduct" ? 'active' : '' ?>">
+              <a href="<?= LINK ?>ManageProduct" class="nav-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span>จัดการสินค้า</span>
+              </a>
+            </li>
 
             <li class="dropdown <?= strtolower($this->cur_class) == 'managewebsite' ? 'active' : '' ?>">
               <a href="#" class="nav-link has-dropdown">
