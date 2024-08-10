@@ -126,11 +126,13 @@ body {
 	background-color: red;
 }
 
-.form-control, .input-group-text, .custom-select, .custom-file-label {
+.form-control, .input-group-text, .custom-select, .custom-file-label, .bootstrap-tagsinput {
 	background-color: unset;
 	border-color: #d3d3d3;
 }
 
 .form-control:focus, .input-group-text:focus, .custom-select:focus, .custom-file-label:focus {
 	background-color: unset;
+
+
 }
