@@ -170,7 +170,7 @@ define('LINK', base_url() . 'admin/');
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
               <img alt="image" src="<?= ASSETS_PATH ?>images/logo/favicon.ico" class="rounded-circle mr-1">
-              <div class="d-sm-none d-lg-inline-block">ผู้ดูแลระบบ</div>
+              <div class="d-sm-none d-lg-inline-block"><?= $this->session->userdata['fname'] . ' ' . $this->session->userdata['lname'] ?></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
               <a href="<?= LINK ?>UserProfile/form" class="dropdown-item has-icon">

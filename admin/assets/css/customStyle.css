@@ -133,6 +133,8 @@ body {
 
 .form-control:focus, .input-group-text:focus, .custom-select:focus, .custom-file-label:focus {
 	background-color: unset;
+}
 
-
+a:hover {
+	color: unset;
 }
