@@ -93,7 +93,7 @@ define('LINK', base_url() . 'admin/');
 								<div class="d-block">
 									<label for="password" class="control-label">รหัสผ่าน</label>
 								</div>
-								<input id="password" type="password" value="<?= !empty($post['username']) ? $post['username'] : '' ?>" class="form-control" name="password" tabindex="2" required placeholder="รหัสผ่าน">
+								<input id="password" type="password" value="<?= !empty($post['password']) ? $post['password'] : '' ?>" class="form-control" name="password" tabindex="2" required placeholder="รหัสผ่าน">
 								<div class="invalid-feedback">
 									กรุณากรอกรหัสผ่าน
 								</div>

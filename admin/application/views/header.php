@@ -61,6 +61,7 @@ define('LINK', base_url() . 'admin/');
   <!-- Template CSS -->
   <link rel="stylesheet" href="<?= ASSETS_PATH ?>css/style.css">
   <link rel="stylesheet" href="<?= ASSETS_PATH ?>css/components.css">
+  <link rel="stylesheet" href="<?= ASSETS_PATH ?>css/skins/reverse.css">
 
   <!-- General JS Scripts -->
   <script src="<?= ASSETS_PATH ?>modules/jquery.min.js"></script>

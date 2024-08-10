@@ -1,5 +1,5 @@
 :root {
-	--primary-color: #6777ef;
+	--primary-color: #FFAF00;
 	--pink-color: #FFB1B1;
 }
 
@@ -120,4 +120,17 @@ body {
 .customMainContent .main-sidebar .sidebar-menu li a .badge {
 	width: unset;
 	margin-left: 3px;
+}
+
+.customMainContent .navbar-nav .beep:after {
+	background-color: red;
+}
+
+.form-control, .input-group-text, .custom-select, .custom-file-label {
+	background-color: unset;
+	border-color: #d3d3d3;
+}
+
+.form-control:focus, .input-group-text:focus, .custom-select:focus, .custom-file-label:focus {
+	background-color: unset;
 }
