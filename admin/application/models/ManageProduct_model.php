@@ -7,6 +7,21 @@ class ManageProduct_model extends CI_Model
     private $path = 'file_upload/product/';
     public $per_page = 10;
 
+    public function __construct()
+    {
+        if(!is_dir('file_upload')) {
+            $oldmask = umask(0);
+            mkdir("file_upload", 0777);
+            umask($oldmask);
+        }
+
+        if(!is_dir($this->path)) {
+            $oldmask = umask(0);
+            mkdir($this->path, 0777);
+            umask($oldmask);
+        }
+    }
+
     public $searchElement = [
         'product_name' => 'like', 
         'status' => 'where'
