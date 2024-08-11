@@ -136,5 +136,6 @@ body {
 }
 
 a:hover {
-	color: unset;
+	color: var(--primary-color);
+	opacity: 0.6;
 }

@@ -7,6 +7,21 @@ class ManageWebSite_model extends CI_Model
     private $sys_config_tbl = 'sys_config';
     private $path = 'file_upload/website/';
 
+    public function __construct()
+    {
+        if(!is_dir('file_upload')) {
+            $oldmask = umask(0);
+            mkdir("file_upload", 0777);
+            umask($oldmask);
+        }
+
+        if(!is_dir($this->path)) {
+            $oldmask = umask(0);
+            mkdir($this->path, 0777);
+            umask($oldmask);
+        }
+    }
+
 
     public function getData()
     {
