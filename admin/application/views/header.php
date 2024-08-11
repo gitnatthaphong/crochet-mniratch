@@ -234,18 +234,18 @@ define('LINK', base_url() . 'admin/');
               </a>
             </li>
 
-            <?php $classActive = ['managewebsite', 'managebanner'] ?>
+            <?php $classActive = ['managewebbanner', 'managewebabout', 'managewebproduct', 'managewebsales', 'managewebcontact', 'managewebsocial'] ?>
             <li class="dropdown <?= in_array(strtolower($this->cur_class), $classActive) ? 'active' : '' ?>">
               <a href="#" class="nav-link has-dropdown">
                 <i class="fas fa-globe-asia"></i> <span>จัดการหน้าเว็บไซต์</span>
               </a>
               <ul class="dropdown-menu">
-                <li class="<?= strtolower($this->cur_class) == 'managebanner' ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageBanner/">แบนเนอร์</a></li>
-                <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'about'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/about">เกี่ยวกับ</a></li>
-                <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'product'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/product">สินค้า</a></li>
-                <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'sales'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/sales">เนื้อหาการนับ</a></li>
-                <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'contact'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/contact">ติดต่อ</a></li>
-                <li class="<?= strtolower($this->cur_class) == 'managewebsite' && strtolower($this->cur_method) == 'social'  ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebsite/social">โซเชียล</a></li>
+                <li class="<?= strtolower($this->cur_class) == 'managewebbanner' ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebBanner/">แบนเนอร์</a></li>
+                <li class="<?= strtolower($this->cur_class) == 'managewebabout' ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebAbout/">เกี่ยวกับ</a></li>
+                <li class="<?= strtolower($this->cur_class) == 'managewebproduct' ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebProduct/">สินค้า</a></li>
+                <li class="<?= strtolower($this->cur_class) == 'managewebsales' ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebSales/">เนื้อหาการนับ</a></li>
+                <li class="<?= strtolower($this->cur_class) == 'managewebcontact' ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebContact">ติดต่อ</a></li>
+                <li class="<?= strtolower($this->cur_class) == 'managewebsocial' ? 'active' : '' ?>"><a class="nav-link" href="<?= LINK ?>ManageWebSocial">โซเชียล</a></li>
               </ul>
             </li>
 
