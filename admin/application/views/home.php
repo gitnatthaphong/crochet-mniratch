@@ -60,8 +60,8 @@
           </div>
         </div> -->
             </div>
-            <div class="card-body">
-                <canvas id="myChart" height="182"></canvas>
+            <div class="card-body" style="height: 400px;">
+                <canvas id="myChart"></canvas>
             </div>
         </div>
     </div>
@@ -107,6 +107,8 @@
                     }
                 }]
             },
+            responsive: true,
+            maintainAspectRatio: false
         }
     });
 </script>
